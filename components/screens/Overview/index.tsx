@@ -1,0 +1,32 @@
+import { ScrollView, StyleSheet } from "react-native";
+
+import Categories from "../../Categories";
+import Favorite from "../../Favorites";
+import FoodCard from "../../FoodCard/index";
+import ImageButton from "../../ImageButton";
+import ImageView from "../../ImageView";
+import ListView from "../../Listview";
+import React from "react";
+
+const Overview = () => {
+  return (
+    <ScrollView style={styles.container}>
+      <Favorite />
+      <Categories title="Highlights" />
+      <Categories title="Categories" />
+      <ImageButton />
+      <ListView />
+    </ScrollView>
+  );
+};
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+});
+
+export default Overview;
