@@ -1,0 +1,49 @@
+import { Animated, Easing, Image, StyleSheet, Text, View } from "react-native";
+import { useEffect, useRef } from "react";
+
+const ImageView = () => {
+  const animatedValue = useRef(new Animated.Value(0)).current;
+  useEffect(() => {
+    Animated.timing(animatedValue, {
+      toValue: 1,
+      duration: 100,
+      useNativeDriver: true,
+      easing: Easing.ease,
+    }).start();
+  });
+  return (
+    <View style={styles.card}>
+      <Animated.Image
+        style={{
+          width: "100%",
+          height: 600,
+          transform: [
+            {
+              scaleX: animatedValue.interpolate({
+                inputRange: [0, 1],
+                outputRange: ["0%", "100%"],
+              }),
+            },
+            {
+              scaleY: animatedValue.interpolate({
+                inputRange: [0, 1],
+                outputRange: ["0%", "100%"],
+              }),
+            },
+          ],
+        }}
+        source={{ uri: "assets/images/image1.png" }}
+        resizeMode={"cover"}
+      />
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  card: {
+    width: "100%",
+    // height: 250,
+  },
+});
+
+export default ImageView;
