@@ -3,6 +3,7 @@ import { ScrollView, StyleSheet } from "react-native";
 import Categories from "../../Categories";
 import Favorite from "../../Favorites";
 import FoodCard from "../../FoodCard/index";
+import Highlights from "../../Highlights";
 import ImageButton from "../../ImageButton";
 import ImageView from "../../ImageView";
 import ListView from "../../Listview";
@@ -12,7 +13,7 @@ const Overview = () => {
   return (
     <ScrollView style={styles.container}>
       <Favorite />
-      <Categories title="Highlights" />
+      <Highlights title="Highlights" />
       <Categories title="Categories" />
       <ImageButton />
       <ListView />

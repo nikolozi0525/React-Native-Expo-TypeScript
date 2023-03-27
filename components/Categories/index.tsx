@@ -1,8 +1,8 @@
+import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 import CategoryCard from "../CategoryCard";
 import HeadTitle from "../HeadTitle";
-import React from "react";
 
 type Props = {
   title: string;
@@ -10,18 +10,46 @@ type Props = {
 
 const Categories = (props: Props) => {
   const { title } = props;
-
+  const data = [
+    {
+      id: "1di43s09sl3",
+      article_count: 6,
+      title: "Pasta",
+    },
+    {
+      id: "dfs83a92sdfe",
+      article_count: 15,
+      title: "Pasta",
+    },
+    {
+      id: "sfe320s3js5",
+      article_count: 14,
+      title: "Pasta",
+    },
+    {
+      id: "y0gr57dlugs",
+      article_count: 9,
+      title: "Pasta",
+    },
+  ];
+  const [categories, setCategories] = useState([...data]);
+  const CategoryList = () => {
+    return categories.map((f: any) => {
+      return (
+        <CategoryCard
+          article_count={f.article_count}
+          title={f.title}
+          key={f.id}
+        />
+      );
+    });
+  };
   return (
     <View>
       <View>
         <HeadTitle>{title}</HeadTitle>
       </View>
-      <View style={styles.food}>
-        <CategoryCard title="Pasta" article_count={10}></CategoryCard>
-        <CategoryCard title="Pasta" article_count={12}></CategoryCard>
-        <CategoryCard title="Pasta" article_count={10}></CategoryCard>
-        <CategoryCard title="Pasta" article_count={12}></CategoryCard>
-      </View>
+      <View style={styles.food}>{CategoryList()}</View>
     </View>
   );
 };

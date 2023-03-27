@@ -1,5 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
+import { FontAwesome } from "@expo/vector-icons";
 import { useNavigation } from "expo-router";
 
 const BackButton = () => {
@@ -7,7 +8,7 @@ const BackButton = () => {
   return (
     <TouchableOpacity onPress={() => navigation.goBack()}>
       <View style={styles.container}>
-        <Text>{"<"}</Text>
+        <FontAwesome name="arrow-left" size={25} />
       </View>
     </TouchableOpacity>
   );
@@ -22,9 +23,11 @@ const styles = StyleSheet.create({
     shadowColor: "black",
     shadowOpacity: 0.5,
     shadowOffset: {
-      width: 1,
-      height: 1,
+      width: -1,
+      height: 2,
     },
+    alignSelf: "flex-end",
+    backgroundColor: "white",
   },
 });
 

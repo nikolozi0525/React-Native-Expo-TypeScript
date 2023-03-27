@@ -7,6 +7,7 @@ import {
   View,
 } from "react-native";
 
+import FontAwesome from "@expo/vector-icons/FontAwesome";
 import HeadTitle from "../HeadTitle";
 import React from "react";
 import { TouchableOpacity } from "react-native";
@@ -52,8 +53,14 @@ const Item = ({ title, description }: ItemProps) => (
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.description}>{description}</Text>
     </View>
-    <View style={{ position: "absolute", right: 30 }}>
-      <Text style={{ fontSize: 40 }}>{">"}</Text>
+    <View
+      style={{
+        position: "absolute",
+        right: 30,
+        marginTop: 20,
+      }}
+    >
+      <FontAwesome name="chevron-right" size={25} />
     </View>
   </View>
 );

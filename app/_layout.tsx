@@ -58,9 +58,23 @@ function RootLayoutNav() {
     // </>
     <>
       <NavigationContainer independent={true}>
-        <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen name="Home" component={Overview} />
-          <Stack.Screen name="detail" component={DetailView} />
+        <Stack.Navigator
+          initialRouteName="Home"
+          screenOptions={{
+            // headerShown: false,
+            animation: "slide_from_right",
+          }}
+        >
+          <Stack.Screen
+            name="Home"
+            component={Overview}
+            options={{ animation: "slide_from_right", animationDuration: 1000 }}
+          />
+          <Stack.Screen
+            name="detail"
+            component={DetailView}
+            options={{ animation: "slide_from_right", animationDuration: 1000 }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </>

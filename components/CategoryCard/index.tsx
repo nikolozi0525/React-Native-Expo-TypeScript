@@ -1,8 +1,5 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-import AddButton from "../AddButton";
-import { Link } from "expo-router";
-import PlusButton from "../PlusButton";
 import React from "react";
 
 type Props = {
@@ -32,24 +29,24 @@ const CategoryCard: React.FC<Props> = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    width: "46%",
-    marginRight: 10,
-    marginLeft: 10,
-    marginBottom: 30,
-    backgroundColor: "#fffff8",
+    width: "50%",
+    paddingLeft: 10,
+    paddingRight: 10,
     borderRadius: 5,
+    marginBottom: 30,
   },
   card: {
+    backgroundColor: "#fffff8",
     flexDirection: "row",
     height: 150,
   },
   thumbs: {
-    width: "40%",
+    width: "30%",
     height: 150,
     borderRadius: 5,
   },
   description: {
-    width: "60%",
+    width: "70%",
   },
   text_1: {
     fontSize: 42,
