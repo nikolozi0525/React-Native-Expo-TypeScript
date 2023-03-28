@@ -1,7 +1,6 @@
 import {
   Animated,
   Easing,
-  SafeAreaView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -9,21 +8,12 @@ import {
 } from "react-native";
 import React, { useEffect, useRef, useState } from "react";
 
-interface Position {
-  position?: string | "relative";
-  top?: number | 0;
-  left?: number | 0;
-  right?: number | 0;
-  bottom?: number | 0;
-}
-
 type Props = {
-  btposition: any;
   title: string;
 };
 
 const AddButton = (props: Props) => {
-  const { btposition } = props;
+  const { title } = props;
   const [count, setCount] = useState(0);
   const translate_1 = useRef(new Animated.Value(0)).current;
   const translate_2 = useRef(new Animated.Value(1)).current;
@@ -50,18 +40,14 @@ const AddButton = (props: Props) => {
         easing: Easing.ease,
       }).start();
   }, [count]);
-  const combineStyles = StyleSheet.flatten([
-    styles.container,
-    { ...btposition },
-  ]);
   return count == 0 ? (
-    <Animated.View style={[styles.sb_container, { ...btposition }]}>
+    <Animated.View style={styles.sb_container}>
       <TouchableOpacity style={styles.plusbutton} onPress={increaseCount}>
-        <Text style={styles.title}>{props.title}</Text>
+        <Text style={styles.title}>{title}</Text>
       </TouchableOpacity>
     </Animated.View>
   ) : (
-    <Animated.View style={combineStyles}>
+    <Animated.View style={styles.container}>
       <TouchableOpacity onPress={decreaseCount} style={styles.lbutton}>
         <Text style={styles.myfont}>{"-"}</Text>
       </TouchableOpacity>

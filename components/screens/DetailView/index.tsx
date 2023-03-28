@@ -9,15 +9,7 @@ import ImageView from "../../ImageView";
 import OtherOptions from "../../OtherOptions";
 import PriceBox from "../../PriceBox";
 
-interface Position {
-  position?: string | "relative";
-  top?: number | 0;
-  left?: number | 0;
-  right?: number | 0;
-  bottom?: number | 0;
-}
 const DetailView = () => {
-  const badge_pos: Position = { position: "relative", top: 10, left: 10 };
   const [offset, setOffset] = useState(0);
   return (
     <>
@@ -28,7 +20,6 @@ const DetailView = () => {
         style={[styles.container]}
         onScroll={(event) => {
           const scrolling = event.nativeEvent.contentOffset.y;
-          const { height } = event.nativeEvent.layoutMeasurement;
           setOffset(scrolling);
         }}
         automaticallyAdjustContentInsets={false}
@@ -37,7 +28,6 @@ const DetailView = () => {
       >
         <View
           style={{
-            // flexWrap: "wrap",
             transform: [
               {
                 translateY: offset * 0.61,
@@ -52,9 +42,13 @@ const DetailView = () => {
             backgroundColor: "#fffff8",
           }}
         >
-          <Badge badge_pos={badge_pos}>
-            <Text>vegetarian </Text>
-          </Badge>
+          <View
+            style={{ position: "relative", top: 10, left: 10, marginBottom: 5 }}
+          >
+            <Badge>
+              <Text>vegetarian </Text>
+            </Badge>
+          </View>
           <HeadTitle>
             <Text> Funky Falafel Bowl</Text>
           </HeadTitle>

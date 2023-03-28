@@ -22,19 +22,9 @@ interface Display {
   display: string;
 }
 
-interface Position {
-  position?: string;
-  top?: number;
-  left?: number;
-  right?: number;
-  bottom?: number;
-}
-
 const FoodCard: React.FC<Props> = (props) => {
   const { price, title } = props;
   const navigation: any = useNavigation();
-  const btposition: Position = { position: "absolute", bottom: 100, right: 10 };
-  const badge_pos: Position = { position: "absolute", top: 12, left: 10 };
   const [count, setCount] = useState(0);
 
   return (
@@ -50,11 +40,14 @@ const FoodCard: React.FC<Props> = (props) => {
           ]}
           source={require("../../assets/images/image1.png")}
         />
-        <Badge badge_pos={badge_pos}>
-          <Text>{"top-selling"}</Text>
-        </Badge>
-
-        <AddButton btposition={btposition} title="+" />
+        <View style={{ position: "absolute", top: 12, left: 10 }}>
+          <Badge>
+            <Text>{"top-selling"}</Text>
+          </Badge>
+        </View>
+        <View style={{ position: "absolute", bottom: 100, right: 10 }}>
+          <AddButton title="+" />
+        </View>
         <View style={styles.description}>
           <Text style={styles.text_1}>
             <Text>

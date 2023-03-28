@@ -12,16 +12,8 @@ import React, { useEffect, useRef } from "react";
 import type { PropsWithChildren } from "react";
 import type { ViewStyle } from "react-native";
 
-interface Position {
-  position?: string | "relative";
-  top?: number | 0;
-  left?: number | 0;
-  right?: number | 0;
-  bottom?: number | 0;
-}
 type Props = {
   title: string;
-  position?: any;
   onAdd: Function;
 };
 
@@ -51,9 +43,9 @@ const FadeInView: React.FC<FadeInViewProps> = (props) => {
 };
 
 const PlusButton = (props: Props) => {
-  const { title, position } = props;
+  const { title } = props;
   return (
-    <View style={[styles.container, { ...position }]}>
+    <View style={styles.container}>
       <TouchableOpacity style={styles.plusbutton}>
         <Text style={styles.title}>{title}</Text>
       </TouchableOpacity>
