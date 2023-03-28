@@ -65,10 +65,14 @@ const DetailView = () => {
           <PriceBox price={9} />
           <Description>
             <Text>
-              Buglur Salad (<b>Wheat, Cereals containing gluten</b>), Hummus (
-              <b>Sesame seeds</b>), Tomatoes, Cucumber, Beetroot falafel,
-              Shepherd's cheese (<b>Milk, Lactose</b>),Lime,Olive Oil, Parsley{" "}
-              <br></br>
+              Buglur Salad (
+              <Text style={styles.bolded}>
+                Wheat, Cereals containing gluten
+              </Text>
+              ), Hummus (<Text style={styles.bolded}>Sesame seeds</Text>),
+              Tomatoes, Cucumber, Beetroot falafel, Shepherd's cheese (
+              <Text style={styles.bolded}>Milk, Lactose</Text>),Lime,Olive Oil,
+              Parsley <br></br>
               <br></br>My contain traces:Rye, barley, eggs, celery,soybeans,
               oats, mustard
             </Text>
@@ -87,6 +91,9 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 20,
+    fontWeight: "bold",
+  },
+  bolded: {
     fontWeight: "bold",
   },
 });

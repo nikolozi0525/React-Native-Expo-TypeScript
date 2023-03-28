@@ -48,9 +48,10 @@ const FoodCard: React.FC<Props> = (props) => {
         <AddButton btposition={btposition} title="+" />
         <View style={styles.description}>
           <Text style={styles.text_1}>
-            <b>
-              <Text>{price}</Text>
-            </b>
+            <Text>
+              {price}
+              {"\u20AC"}
+            </Text>
           </Text>
           <Text style={styles.text_2}>{title}</Text>
         </View>

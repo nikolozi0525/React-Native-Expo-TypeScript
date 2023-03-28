@@ -13,9 +13,7 @@ const CategoryCard: React.FC<Props> = (props) => {
     <TouchableOpacity style={styles.container}>
       <View style={styles.card}>
         <View style={styles.description}>
-          <Text style={styles.text_1}>
-            <b>{title}</b>
-          </Text>
+          <Text style={styles.text_1}>{title}</Text>
           <Text style={styles.text_2}>{article_count} Articles</Text>
         </View>
         <Image
@@ -49,12 +47,14 @@ const styles = StyleSheet.create({
     width: "70%",
   },
   text_1: {
+    marginLeft: 10,
     fontSize: 42,
     fontWeight: "bold",
   },
   text_2: {
     position: "absolute",
     bottom: 10,
+    marginLeft: 10,
     fontSize: 24,
   },
 });
