@@ -90,18 +90,18 @@ const AddButton = (props: Props) => {
     <Animated.View
       style={[
         combineStyles,
-        {
-          width: translate_1.interpolate({
-            inputRange: [0, 1],
-            outputRange: ["0%", "100%"],
-          }),
-        },
-        {
-          width: translate_2.interpolate({
-            inputRange: [0, 1],
-            outputRange: [240, 0],
-          }),
-        },
+        // {
+        //   width: translate_1.interpolate({
+        //     inputRange: [0, 1],
+        //     outputRange: ["0%", "100%"],
+        //   }),
+        // },
+        // {
+        //   width: translate_2.interpolate({
+        //     inputRange: [0, 1],
+        //     outputRange: [240, 0],
+        //   }),
+        // },
       ]}
     >
       <TouchableOpacity onPress={decreaseCount} style={styles.lbutton}>

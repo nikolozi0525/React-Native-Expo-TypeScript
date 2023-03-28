@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet } from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 
 import Categories from "../../Categories";
 import Favorite from "../../Favorites";
@@ -12,11 +12,13 @@ import React from "react";
 const Overview = () => {
   return (
     <ScrollView style={styles.container}>
-      <Favorite />
-      <Highlights title="Highlights" />
-      <Categories title="Categories" />
-      <ImageButton />
-      <ListView />
+      <View>
+        <Favorite />
+        <Highlights title="Highlights" />
+        <Categories title="Categories" />
+        <ImageButton />
+        <ListView />
+      </View>
     </ScrollView>
   );
 };
