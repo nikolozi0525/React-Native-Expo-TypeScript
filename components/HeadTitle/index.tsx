@@ -16,7 +16,7 @@ const HeadTitle = (props: Props) => {
   }, [error]);
   return (
     <View>
-      <Text style={[styles.title, { fontFamily: "LibreBodonie" }]}>
+      <Text style={[styles.title, { fontFamily: "Bonodi MT Condensed" }]}>
         {children}
       </Text>
     </View>
