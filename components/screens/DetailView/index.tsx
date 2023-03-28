@@ -70,7 +70,7 @@ const DetailView = () => {
               <Text style={styles.bolded}>Milk, Lactose</Text>),Lime,Olive Oil,
               Parsley
               <View>
-                <Text>
+                <Text style={{ fontSize: 24 }}>
                   My contain traces:Rye, barley, eggs, celery,soybeans, oats,
                   mustard
                 </Text>

@@ -26,10 +26,10 @@ const Badge = (props: Props) => {
 const styles = StyleSheet.create({
   container: {
     alignSelf: "baseline",
-  },
-  wrapper: {
     borderRadius: 15,
     backgroundColor: "black",
+  },
+  wrapper: {
     color: "white",
     paddingHorizontal: 10,
     paddingVertical: 3,
