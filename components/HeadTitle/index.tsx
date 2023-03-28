@@ -9,7 +9,7 @@ type Props = {
 const HeadTitle = (props: Props) => {
   const { children } = props;
   const [fontsLoaded, error] = useFonts({
-    LibreBodonie: require("../../assets/fonts/BOD_CB.TTF"),
+    LibreBodonie: require("../../assets/fonts/LibreBodoni-VariableFont_wght.ttf"),
   });
   useEffect(() => {
     if (error) console.log(error);
