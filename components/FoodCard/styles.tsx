@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   card: {
@@ -10,10 +10,9 @@ const styles = StyleSheet.create({
   },
   thumbs: {
     width: "100%",
-    height: undefined,
     aspectRatio: 1,
     borderRadius: 8,
-    resizeMode: "stretch",
+    // resizeMode: "stretch",
   },
   description: {
     height: 80,

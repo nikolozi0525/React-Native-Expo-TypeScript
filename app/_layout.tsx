@@ -8,6 +8,7 @@ import {
 
 import DetailView from "../components/screens/DetailView";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import Navbar from "../components/Navbar";
 import Overview from "../components/screens/Overview";
 import { SplashScreen } from "expo-router";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -48,14 +49,6 @@ function RootLayoutNav() {
   const colorScheme = useColorScheme();
 
   return (
-    // <>
-    //   <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-    //     <Stack>
-    //       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-    //       <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
-    //     </Stack>
-    //   </ThemeProvider>
-    // </>
     <>
       <NavigationContainer independent={true}>
         <Stack.Navigator
@@ -68,12 +61,20 @@ function RootLayoutNav() {
           <Stack.Screen
             name="Home"
             component={Overview}
-            options={{ animation: "slide_from_right", animationDuration: 1000 }}
+            options={{
+              animation: "slide_from_right",
+              animationDuration: 1000,
+              headerTitle: (props) => <Navbar address="Basselweg 73" />,
+            }}
           />
           <Stack.Screen
             name="detail"
             component={DetailView}
-            options={{ animation: "slide_from_right", animationDuration: 1000 }}
+            options={{
+              headerShown: false,
+              animation: "slide_from_right",
+              animationDuration: 1000,
+            }}
           />
         </Stack.Navigator>
       </NavigationContainer>
