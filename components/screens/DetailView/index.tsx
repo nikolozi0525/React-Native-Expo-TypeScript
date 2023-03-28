@@ -19,7 +19,6 @@ interface Position {
 const DetailView = () => {
   const badge_pos: Position = { position: "relative", top: 10, left: 10 };
   const [offset, setOffset] = useState(0);
-  const [contentInsetBottom, setContentInsetBottom] = useState(0);
   return (
     <>
       <View style={{ position: "absolute", top: 20, left: 20, zIndex: 2 }}>
@@ -30,12 +29,9 @@ const DetailView = () => {
         onScroll={(event) => {
           const scrolling = event.nativeEvent.contentOffset.y;
           const { height } = event.nativeEvent.layoutMeasurement;
-          console.log(height);
-          setContentInsetBottom(height - 600);
           setOffset(scrolling);
         }}
         automaticallyAdjustContentInsets={false}
-        contentInset={{ top: 0, bottom: contentInsetBottom }}
         showsVerticalScrollIndicator={false}
         scrollEventThrottle={16}
       >

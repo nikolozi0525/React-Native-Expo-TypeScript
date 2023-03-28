@@ -21,13 +21,13 @@ const ImageView = () => {
             {
               scaleX: animatedValue.interpolate({
                 inputRange: [0, 1],
-                outputRange: ["0%", "100%"],
+                outputRange: [0, 1],
               }),
             },
             {
               scaleY: animatedValue.interpolate({
                 inputRange: [0, 1],
-                outputRange: ["0%", "100%"],
+                outputRange: [0, 1],
               }),
             },
           ],
