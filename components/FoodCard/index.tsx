@@ -39,7 +39,7 @@ const FoodCard: React.FC<Props> = (props) => {
       <View>
         <Image
           style={styles.thumbs}
-          source={{ uri: "../../assets/images/image1.png" }}
+          source={require("../../assets/images/image1.png")}
         />
         <Badge badge_pos={badge_pos}>
           <Text>{"top-selling"}</Text>
