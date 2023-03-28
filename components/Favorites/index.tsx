@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { Favorite } from "../../types";
 
+import { Favorites } from "../../types";
 import FoodCard from "../FoodCard/index";
 import HeadTitle from "../HeadTitle";
 
 const Favorite = () => {
-  const data: Array<Favorite> = [
+  const data: Array<Favorites> = [
     {
       id: "1di43s09sl3",
       price: 9.0,
