@@ -1,7 +1,12 @@
 import { Animated, Easing, Image, StyleSheet, Text, View } from "react-native";
 import { useEffect, useRef } from "react";
 
-const ImageView = () => {
+type Props = {
+  uri: any;
+};
+const ImageView = (props: Props) => {
+  const { uri } = props;
+  console.log(uri);
   const animatedValue = useRef(new Animated.Value(0)).current;
   useEffect(() => {
     Animated.timing(animatedValue, {
@@ -33,7 +38,7 @@ const ImageView = () => {
             },
           ],
         }}
-        source={require("../../assets/images/image1.png")}
+        source={uri}
         resizeMode={"cover"}
       />
     </View>

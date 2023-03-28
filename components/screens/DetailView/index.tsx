@@ -11,6 +11,9 @@ import PriceBox from "../../PriceBox";
 
 const DetailView = () => {
   const [offset, setOffset] = useState(0);
+  const data = {
+    img: "../../assets/images/image1.png",
+  };
   return (
     <>
       <View style={{ position: "absolute", top: 20, left: 20, zIndex: 2 }}>
@@ -35,7 +38,7 @@ const DetailView = () => {
             ],
           }}
         >
-          <ImageView />
+          <ImageView uri={data.img} />
         </View>
         <View
           style={{
