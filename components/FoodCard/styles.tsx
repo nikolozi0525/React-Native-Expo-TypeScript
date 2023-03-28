@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
   thumbs: {
     width: "100%",
     height: undefined,
-    aspectRatio: 1.61,
+    aspectRatio: 1,
     borderRadius: 8,
     resizeMode: "stretch",
   },

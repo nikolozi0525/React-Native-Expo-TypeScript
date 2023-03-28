@@ -6,7 +6,7 @@ const ImageButton = () => {
       <TouchableOpacity>
         <Image
           style={styles.thumbs}
-          source={{ uri: "assets/images/image4.png" }}
+          source={require("../../assets/images/image4.png")}
         />
       </TouchableOpacity>
     </View>
