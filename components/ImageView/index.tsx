@@ -16,7 +16,8 @@ const ImageView = () => {
       <Animated.Image
         style={{
           width: "100%",
-          height: 600,
+          height: undefined,
+          aspectRatio: 1,
           transform: [
             {
               scaleX: animatedValue.interpolate({
