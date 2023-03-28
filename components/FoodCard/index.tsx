@@ -3,7 +3,6 @@ import React, { useEffect, useRef, useState } from "react";
 
 import AddButton from "../AddButton";
 import Badge from "../Badge";
-import PlusButton from "../PlusButton";
 import styles from "./styles";
 import { useNavigation } from "@react-navigation/native";
 
@@ -42,14 +41,15 @@ const FoodCard: React.FC<Props> = (props) => {
           style={styles.thumbs}
           source={{ uri: "assets/images/image1.png" }}
         />
-        <Badge badge_pos={badge_pos}>{"top-selling"}</Badge>
+        <Badge badge_pos={badge_pos}>
+          <Text>{"top-selling"}</Text>
+        </Badge>
 
         <AddButton btposition={btposition} title="+" />
         <View style={styles.description}>
           <Text style={styles.text_1}>
             <b>
-              {price}
-              {"\u20AC"}
+              <Text>{price}</Text>
             </b>
           </Text>
           <Text style={styles.text_2}>{title}</Text>

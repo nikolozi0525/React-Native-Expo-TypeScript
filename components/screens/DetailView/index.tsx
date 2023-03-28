@@ -39,18 +39,21 @@ const DetailView = () => {
         showsVerticalScrollIndicator={false}
         scrollEventThrottle={16}
       >
-        <View>
+        <View
+          style={{
+            // flexWrap: "wrap",
+            transform: [
+              {
+                translateY: offset * 0.61,
+              },
+            ],
+          }}
+        >
           <ImageView />
         </View>
         <View
           style={{
-            // flexWrap: "wrap",
             backgroundColor: "#fffff8",
-            transform: [
-              {
-                translateY: -offset * 2,
-              },
-            ],
           }}
         >
           <Badge badge_pos={badge_pos}>
