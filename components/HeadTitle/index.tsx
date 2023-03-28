@@ -9,14 +9,14 @@ type Props = {
 const HeadTitle = (props: Props) => {
   const { children } = props;
   const [fontsLoaded, error] = useFonts({
-    LibreBodonie: require("../../assets/fonts/LibreBodoni-VariableFont_wght.ttf"),
+    LibreBodonie: require("../../assets/fonts/BOD_CB.ttf"),
   });
   useEffect(() => {
     if (error) console.log(error);
   }, [error]);
   return (
     <View>
-      <Text style={[styles.title, { fontFamily: "Bonodi MT Condensed" }]}>
+      <Text style={[styles.title, { fontFamily: "LibreBodonie" }]}>
         {children}
       </Text>
     </View>
