@@ -6,7 +6,6 @@ type Props = {
 };
 const ImageView = (props: Props) => {
   const { uri } = props;
-  console.log(uri);
   const animatedValue = useRef(new Animated.Value(0)).current;
   useEffect(() => {
     Animated.timing(animatedValue, {
@@ -38,7 +37,7 @@ const ImageView = (props: Props) => {
             },
           ],
         }}
-        source={uri}
+        source={require("../../assets/images/image1.png")}
         resizeMode={"cover"}
       />
     </View>

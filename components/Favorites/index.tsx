@@ -1,20 +1,23 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { Favorite } from "../../types";
 
 import FoodCard from "../FoodCard/index";
 import HeadTitle from "../HeadTitle";
 
 const Favorite = () => {
-  const data = [
+  const data: Array<Favorite> = [
     {
       id: "1di43s09sl3",
-      price: "9.00",
+      price: 9.0,
       title: "Funky Falafel Bowl",
+      src: "../../assets/images/image1.png",
     },
     {
       id: "dfs83a92sdfe",
-      price: "6.00",
+      price: 9.0,
       title: "Cheese Spatzie",
+      src: "../../assets/images/image2.png",
     },
   ];
   const [foods, setFoods] = useState([...data]);

@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 
 import CategoryCard from "../CategoryCard";
 import HeadTitle from "../HeadTitle";
+import { Highlight } from "../../types";
 
 type Props = {
   title: string;
@@ -10,16 +11,19 @@ type Props = {
 
 const Highlights = (props: Props) => {
   const { title } = props;
-  const data = [
+  const data: Array<Highlight> = [
     {
       id: "1di43s09sl3",
       article_count: 6,
       title: "Pasta & Gnocchi",
+      src: "../../assets/images/image1.png",
     },
     {
       id: "dfs83a92sdfe",
       article_count: 15,
       title: "Bowls & Salads",
+
+      src: "../../assets/images/image1.png",
     },
   ];
   const [highlights, setHighlights] = useState([...data]);

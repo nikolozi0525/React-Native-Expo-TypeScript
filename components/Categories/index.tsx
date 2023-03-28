@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
+import { Category } from "../../types";
 import CategoryCard from "../CategoryCard";
 import HeadTitle from "../HeadTitle";
 
@@ -10,26 +11,31 @@ type Props = {
 
 const Categories = (props: Props) => {
   const { title } = props;
-  const data = [
+  const data: Array<Category> = [
     {
       id: "1di43s09sl3",
       article_count: 6,
       title: "Fries",
+      src: "../../assets/images/image1.png",
     },
     {
       id: "dfs83a92sdfe",
       article_count: 15,
       title: "Curries",
+
+      src: "../../assets/images/image1.png",
     },
     {
       id: "sfe320s3js5",
       article_count: 14,
       title: "Pizza",
+      src: "../../assets/images/image1.png",
     },
     {
       id: "y0gr57dlugs",
       article_count: 16,
       title: "Snacks & Sides",
+      src: "../../assets/images/image1.png",
     },
   ];
   const [categories, setCategories] = useState([...data]);
