@@ -32,7 +32,7 @@ const ImageView = () => {
             },
           ],
         }}
-        source={{ uri: "assets/images/image1.png" }}
+        source={{ uri: "../../assets/images/image1.png" }}
         resizeMode={"cover"}
       />
     </View>

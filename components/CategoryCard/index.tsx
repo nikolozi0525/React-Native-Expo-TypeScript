@@ -18,7 +18,7 @@ const CategoryCard: React.FC<Props> = (props) => {
         </View>
         <Image
           style={styles.thumbs}
-          source={{ uri: "assets/images/image2.png" }}
+          source={{ uri: "../../assets/images/image2.png" }}
         />
       </View>
     </TouchableOpacity>
