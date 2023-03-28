@@ -68,9 +68,13 @@ const DetailView = () => {
               ), Hummus (<Text style={styles.bolded}>Sesame seeds</Text>),
               Tomatoes, Cucumber, Beetroot falafel, Shepherd's cheese (
               <Text style={styles.bolded}>Milk, Lactose</Text>),Lime,Olive Oil,
-              Parsley <br></br>
-              <br></br>My contain traces:Rye, barley, eggs, celery,soybeans,
-              oats, mustard
+              Parsley
+              <View>
+                <Text>
+                  My contain traces:Rye, barley, eggs, celery,soybeans, oats,
+                  mustard
+                </Text>
+              </View>
             </Text>
           </Description>
           <OtherOptions />
