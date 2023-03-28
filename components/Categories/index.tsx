@@ -14,22 +14,22 @@ const Categories = (props: Props) => {
     {
       id: "1di43s09sl3",
       article_count: 6,
-      title: "Pasta",
+      title: "Fries",
     },
     {
       id: "dfs83a92sdfe",
       article_count: 15,
-      title: "Pasta",
+      title: "Curries",
     },
     {
       id: "sfe320s3js5",
       article_count: 14,
-      title: "Pasta",
+      title: "Pizza",
     },
     {
       id: "y0gr57dlugs",
-      article_count: 9,
-      title: "Pasta",
+      article_count: 16,
+      title: "Snacks & Sides",
     },
   ];
   const [categories, setCategories] = useState([...data]);

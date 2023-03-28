@@ -1,4 +1,11 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Dimensions,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 import React from "react";
 
@@ -17,7 +24,12 @@ const CategoryCard: React.FC<Props> = (props) => {
           <Text style={styles.text_2}>{article_count} Articles</Text>
         </View>
         <Image
-          style={styles.thumbs}
+          style={{
+            left: 0,
+            width: "30%",
+            height: Dimensions.get("window").width / 4 - 10,
+            borderRadius: 5,
+          }}
           source={require("../../assets/images/image2.png")}
         />
       </View>
@@ -36,26 +48,21 @@ const styles = StyleSheet.create({
   card: {
     backgroundColor: "#fffff8",
     flexDirection: "row",
-    height: 150,
   },
-  thumbs: {
-    width: "30%",
-    height: 150,
-    borderRadius: 5,
-  },
+
   description: {
     width: "70%",
   },
   text_1: {
-    marginLeft: 10,
-    fontSize: 42,
+    marginLeft: 5,
+    fontSize: 26,
     fontWeight: "bold",
   },
   text_2: {
     position: "absolute",
     bottom: 10,
-    marginLeft: 10,
-    fontSize: 24,
+    marginLeft: 5,
+    fontSize: 18,
   },
 });
 export default CategoryCard;

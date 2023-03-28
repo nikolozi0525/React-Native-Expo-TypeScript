@@ -12,7 +12,7 @@ const Navbar = (props: Props) => {
     <TouchableOpacity>
       <View style={styles.container}>
         <View>
-          <View>
+          <View style={{ alignContent: "center" }}>
             <Text>
               <Text style={styles.bolded}>
                 38 min

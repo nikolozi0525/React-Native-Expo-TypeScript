@@ -33,7 +33,7 @@ interface Position {
 const FoodCard: React.FC<Props> = (props) => {
   const { price, title } = props;
   const navigation: any = useNavigation();
-  const btposition: Position = { position: "absolute", bottom: 100, right: 30 };
+  const btposition: Position = { position: "absolute", bottom: 100, right: 10 };
   const badge_pos: Position = { position: "absolute", top: 12, left: 10 };
   const [count, setCount] = useState(0);
 

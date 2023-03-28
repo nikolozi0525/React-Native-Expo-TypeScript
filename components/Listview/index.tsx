@@ -60,7 +60,7 @@ const Item = ({ title, description }: ItemProps) => (
         marginTop: 20,
       }}
     >
-      <FontAwesome name="chevron-right" size={25} />
+      <FontAwesome name="chevron-right" size={15} />
     </View>
   </View>
 );
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
   },
   item: {
     backgroundColor: "white",
-    padding: 20,
+    padding: 15,
     borderRadius: 5,
     borderColor: "#d9d9d9",
     borderWidth: 1,
@@ -101,10 +101,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   title: {
-    fontSize: 30,
+    fontSize: 20,
+    fontWeight: "bold",
   },
   description: {
-    fontSize: 16,
+    fontSize: 12,
+    color: "grey",
   },
 });
 

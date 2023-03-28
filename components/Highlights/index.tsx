@@ -14,17 +14,12 @@ const Highlights = (props: Props) => {
     {
       id: "1di43s09sl3",
       article_count: 6,
-      title: "Pasta",
+      title: "Pasta & Gnocchi",
     },
     {
       id: "dfs83a92sdfe",
       article_count: 15,
-      title: "Pasta",
-    },
-    {
-      id: "sfe320s3js5",
-      article_count: 14,
-      title: "Pasta",
+      title: "Bowls & Salads",
     },
   ];
   const [highlights, setHighlights] = useState([...data]);

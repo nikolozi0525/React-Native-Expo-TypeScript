@@ -54,56 +54,14 @@ const AddButton = (props: Props) => {
     styles.container,
     { ...btposition },
   ]);
-  // if (count == 0)
-  //   return (
-
-  //   );
-  // else
   return count == 0 ? (
-    <Animated.View
-      style={[
-        styles.sb_container,
-        { ...btposition },
-        {
-          // transform: [
-          //   {
-          //     translateX: translate_1.interpolate({
-          //       inputRange: [0, 1],
-          //       outputRange: [0, -100],
-          //     }),
-          //   },
-          //   {
-          //     translateX: translate_2.interpolate({
-          //       inputRange: [0, 1],
-          //       outputRange: [0, 100],
-          //     }),
-          //   },
-          // ],
-        },
-      ]}
-    >
+    <Animated.View style={[styles.sb_container, { ...btposition }]}>
       <TouchableOpacity style={styles.plusbutton} onPress={increaseCount}>
         <Text style={styles.title}>{props.title}</Text>
       </TouchableOpacity>
     </Animated.View>
   ) : (
-    <Animated.View
-      style={[
-        combineStyles,
-        // {
-        //   width: translate_1.interpolate({
-        //     inputRange: [0, 1],
-        //     outputRange: ["0%", "100%"],
-        //   }),
-        // },
-        // {
-        //   width: translate_2.interpolate({
-        //     inputRange: [0, 1],
-        //     outputRange: [240, 0],
-        //   }),
-        // },
-      ]}
-    >
+    <Animated.View style={combineStyles}>
       <TouchableOpacity onPress={decreaseCount} style={styles.lbutton}>
         <Text style={styles.myfont}>{"-"}</Text>
       </TouchableOpacity>
