@@ -6,6 +6,7 @@ import {
   ThemeProvider,
 } from "@react-navigation/native";
 
+import Cart from "../components/screens/Cart";
 import DetailView from "../components/screens/DetailView";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Navbar from "../components/Navbar";
@@ -76,6 +77,7 @@ function RootLayoutNav() {
               animationDuration: 1000,
             }}
           />
+          <Stack.Screen name="Basket" component={Cart} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
