@@ -15,7 +15,9 @@ const OrderButton = (props: Props) => {
   return (
     <TouchableOpacity onPress={onClick}>
       <View style={styles.container}>
-        <View style={styles.counts}>{count}</View>
+        <View style={styles.counts}>
+          <Text>{count}</Text>
+        </View>
 
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.totalPrice}>
