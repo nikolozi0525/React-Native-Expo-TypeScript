@@ -6,6 +6,7 @@ import {
   ThemeProvider,
 } from "@react-navigation/native";
 
+import BasketNavbar from "../components/BasketNavbar";
 import Cart from "../components/screens/Cart";
 import DetailView from "../components/screens/DetailView";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
@@ -55,7 +56,9 @@ function RootLayoutNav() {
         <Stack.Navigator
           initialRouteName="Home"
           screenOptions={{
-            // headerShown: false,
+            headerStyle: {
+              borderBottomColor: "transparent",
+            },
             animation: "slide_from_right",
           }}
         >
@@ -77,7 +80,16 @@ function RootLayoutNav() {
               animationDuration: 1000,
             }}
           />
-          <Stack.Screen name="Basket" component={Cart} />
+          <Stack.Screen
+            name="Basket"
+            component={Cart}
+            options={{
+              headerTitle: () => <BasketNavbar />,
+              headerStyle: {
+                borderBottomColor: "transparent",
+              },
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </>

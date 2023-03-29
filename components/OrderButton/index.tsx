@@ -25,7 +25,7 @@ const OrderButton = (props: Props) => {
           {"\u20AC"}
         </Text>
         <View style={styles.arrow}>
-          <FontAwesome name="chevron-right" style={styles.icon} />
+          <FontAwesome name="chevron-right" style={styles.icon} size={20} />
         </View>
       </View>
     </TouchableOpacity>
@@ -36,11 +36,12 @@ const styles = StyleSheet.create({
   container: {
     borderRadius: 5,
     backgroundColor: "black",
-    paddingVertical: 10,
+    paddingVertical: 15,
     flexDirection: "row",
     position: "absolute",
     bottom: 30,
     width: "90%",
+    zIndex: 1,
     alignSelf: "center",
   },
   counts: {
@@ -65,6 +66,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignSelf: "center",
     marginLeft: "auto",
+    fontSize: 18,
   },
   arrow: {
     marginLeft: 20,
@@ -74,6 +76,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     color: "white",
+    marginRight: 15,
   },
 });
 

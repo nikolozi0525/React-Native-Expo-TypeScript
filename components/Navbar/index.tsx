@@ -12,7 +12,13 @@ const Navbar = (props: Props) => {
     <TouchableOpacity>
       <View style={styles.container}>
         <View>
-          <View style={{ alignContent: "center" }}>
+          <View
+            style={{
+              alignItems: "center",
+              flexDirection: "row",
+              justifyContent: "center",
+            }}
+          >
             <Text>
               <Text style={styles.bolded}>
                 38 min
@@ -27,7 +33,13 @@ const Navbar = (props: Props) => {
               <Text style={styles.myfont}>{address}</Text>
             </Text>
           </View>
-          <View>
+          <View
+            style={{
+              alignItems: "center",
+              flexDirection: "row",
+              justifyContent: "center",
+            }}
+          >
             <Text style={styles.time}>
               Kitchen's Open 09:00 - 12:30 and 15:00 - 19:00
             </Text>

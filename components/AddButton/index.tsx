@@ -66,6 +66,8 @@ const AddButton = (props: Props) => {
 const styles = StyleSheet.create({
   sb_container: {
     flex: 1,
+    alignSelf: "baseline",
+    marginLeft: "auto",
   },
   container: {
     flex: 0.3,
@@ -73,7 +75,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderColor: "black",
     flexWrap: "wrap",
-    width: 200,
+    width: "100%",
     borderTopLeftRadius: 15,
     borderBottomLeftRadius: 15,
     borderTopRightRadius: 15,

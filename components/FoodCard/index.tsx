@@ -45,7 +45,14 @@ const FoodCard: React.FC<Props> = (props) => {
             <Text>{"top-selling"}</Text>
           </Badge>
         </View>
-        <View style={{ position: "absolute", bottom: 100, right: 10 }}>
+        <View
+          style={{
+            position: "absolute",
+            bottom: 100,
+            right: "5%",
+            width: "90%",
+          }}
+        >
           <AddButton title="+" />
         </View>
         <View style={styles.description}>
