@@ -7,19 +7,35 @@ import Highlights from "../../Highlights";
 import ImageButton from "../../ImageButton";
 import ImageView from "../../ImageView";
 import ListView from "../../Listview";
+import OrderButton from "../../OrderButton";
 import React from "react";
+import { useNavigation } from "expo-router";
 
 const Overview = () => {
+  const navigation: any = useNavigation();
+
+  const onClick = () => {
+    navigation.push("Basket");
+  };
+
   return (
-    <ScrollView style={styles.container}>
-      <View>
-        <Favorite />
-        <Highlights title="Highlights" />
-        <Categories title="Categories" />
-        <ImageButton />
-        <ListView />
-      </View>
-    </ScrollView>
+    <>
+      <ScrollView style={styles.container}>
+        <View>
+          <Favorite />
+          <Highlights title="Highlights" />
+          <Categories title="Categories" />
+          <ImageButton />
+          <ListView />
+        </View>
+      </ScrollView>
+      <OrderButton
+        title={"VIEW ORDER"}
+        price={9.0}
+        count={1}
+        onClick={onClick}
+      />
+    </>
   );
 };
 const styles = StyleSheet.create({
