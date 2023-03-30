@@ -6,10 +6,12 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import { Link, useNavigation } from "expo-router";
 import { useEffect, useState } from "react";
 
 import { FontAwesome } from "@expo/vector-icons";
 import OneSelect from "../../OneSelect";
+import OrderButton from "../../OrderButton/index";
 import RadioButton from "../../RadioButton/index";
 import StyledInput from "../../StyeldInput/index";
 
@@ -80,12 +82,17 @@ const Checkout = () => {
 
   const [text, changeText] = useState("");
   const [lname, changeLname] = useState("");
-  const email = "Austin.Byrne@teml.net";
+  const email = "abc123@def.com";
   const address = "Basselweg 73, Hamburg";
   const [selected, setSelected] = useState(1);
   const [deliverTime, setDeliverTime] = useState(1);
   const [tip, setTip] = useState(2);
+  const navigator: any = useNavigation();
 
+  const getTotalPrice = () => {
+    price.tip = tip == 1 ? 0 : (price.items * tip * 5) / 100;
+    return price.items + price.tip + price.fee;
+  };
   useEffect(() => {
     price.tip = tip == 1 ? 0 : (price.items * tip * 5) / 100;
     price.total = price.items + price.tip + price.fee;
@@ -93,7 +100,7 @@ const Checkout = () => {
   }, [tip]);
 
   return (
-    <ScrollView>
+    <ScrollView style={{ backgroundColor: "#fffffe" }}>
       <View>
         <Text style={styles.headtitle}>{"Personal Info"}</Text>
       </View>
@@ -190,15 +197,51 @@ const Checkout = () => {
               {"\u20AC"}
             </Text>
           </View>
-          <View>
-            <View style={[styles.totalprice, styles.priceItem]}>
-              <Text style={{ fontWeight: "bold" }}>{"Total"}</Text>
-              <Text style={{ marginLeft: "auto" }}>
-                {price.total}
-                {"\u20AC"}
-              </Text>
-            </View>
+
+          <View style={[styles.totalprice, styles.priceItem]}>
+            <Text style={{ fontWeight: "bold" }}>{"Total"}</Text>
+            <Text style={{ marginLeft: "auto" }}>
+              {getTotalPrice()}
+              {"\u20AC"}
+            </Text>
           </View>
+          <View style={{ flexDirection: "row", padding: 10, paddingTop: 0 }}>
+            <Text style={{ fontSize: 12, color: "grey" }}>
+              {"Including VAT"}
+            </Text>
+            <Text style={{ marginLeft: "auto", fontSize: 12 }}>
+              {1.73}
+              {"\u20AC"}
+            </Text>
+          </View>
+        </View>
+
+        <View style={{ paddingHorizontal: 5, marginVertical: 10 }}>
+          <Text style={{ textAlign: "center" }}>
+            {"By placing an order you agree to our "}
+            <Text
+              style={{ borderBottomColor: "black", borderBottomWidth: 1 }}
+              onPress={() => navigator.push("Home")}
+            >
+              terms and conditions
+            </Text>
+            {" and confirm that you have read our "}
+            <Text
+              style={{ borderBottomColor: "black", borderBottomWidth: 1 }}
+              onPress={() => navigator.push("Home")}
+            >
+              privacy policy
+            </Text>
+          </Text>
+        </View>
+        <View style={{ position: "relative" }}>
+          <OrderButton
+            title="Pay & Order"
+            onClick={() => {
+              alert("Pay & order");
+            }}
+            count={2}
+          />
         </View>
       </View>
     </ScrollView>
@@ -222,6 +265,7 @@ const styles = StyleSheet.create({
     right: 15,
     alignSelf: "center",
     justifyContent: "center",
+    color: "#333333",
   },
   headtitle: {
     fontWeight: "bold",
@@ -229,7 +273,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   addVocher: {
-    backgroundColor: "#fffff6",
+    backgroundColor: "#f8f8dc",
     paddingVertical: 10,
     justifyContent: "center",
     alignSelf: "center",

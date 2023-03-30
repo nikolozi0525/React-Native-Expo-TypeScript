@@ -54,7 +54,7 @@ const StyledInput = (props: Props) => {
 
 const styles = StyleSheet.create({
   input: {
-    backgroundColor: "#fffff6",
+    backgroundColor: "#f8f8dd",
     padding: 10,
     borderRadius: 10,
     flex: 1,

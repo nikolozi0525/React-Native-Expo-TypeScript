@@ -4,7 +4,7 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 
 type Props = {
   count: number;
-  price: number;
+  price?: number;
   title: string;
   onClick(): void;
 };
@@ -20,10 +20,13 @@ const OrderButton = (props: Props) => {
         </View>
 
         <Text style={styles.title}>{title}</Text>
-        <Text style={styles.totalPrice}>
-          {price}
-          {"\u20AC"}
-        </Text>
+        {(price && (
+          <Text style={styles.totalPrice}>
+            {price}
+            {"\u20AC"}
+          </Text>
+        )) ||
+          null}
         <View style={styles.arrow}>
           <FontAwesome name="chevron-right" style={styles.icon} size={20} />
         </View>
@@ -38,11 +41,12 @@ const styles = StyleSheet.create({
     backgroundColor: "black",
     paddingVertical: 15,
     flexDirection: "row",
-    position: "absolute",
-    bottom: 30,
+    // position: "absolute",
+    // bottom: 30,
     width: "90%",
     zIndex: 1,
     alignSelf: "center",
+    marginBottom: 10,
   },
   counts: {
     backgroundColor: "white",
@@ -69,7 +73,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   arrow: {
-    marginLeft: 20,
+    marginLeft: "auto",
     marginRight: 10,
     justifyContent: "center",
     alignItems: "center",
