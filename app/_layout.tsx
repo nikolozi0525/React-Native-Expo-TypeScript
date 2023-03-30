@@ -8,6 +8,7 @@ import {
 
 import BasketNavbar from "../components/BasketNavbar";
 import Cart from "../components/screens/Cart";
+import Checkout from "../components/screens/Checkout";
 import DetailView from "../components/screens/DetailView";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Navbar from "../components/Navbar";
@@ -90,6 +91,7 @@ function RootLayoutNav() {
               },
             }}
           />
+          <Stack.Screen name="checkout" component={Checkout} />
         </Stack.Navigator>
       </NavigationContainer>
     </>

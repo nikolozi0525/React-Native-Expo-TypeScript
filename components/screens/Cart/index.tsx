@@ -2,8 +2,10 @@ import { Dimensions, SafeAreaView, ScrollView, Text, View } from "react-native";
 
 import CartList from "../../CartList/index";
 import OrderButton from "../../OrderButton/index";
+import { useNavigation } from "expo-router";
 
 const Cart = () => {
+  const navigation: any = useNavigation();
   return (
     <>
       <ScrollView
@@ -18,7 +20,7 @@ const Cart = () => {
         price={18.0}
         title="PREORDER"
         onClick={() => {
-          alert("preorder");
+          navigation.push("checkout");
         }}
       />
     </>
