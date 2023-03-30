@@ -30,7 +30,7 @@ const OneSelect = (props: Props) => {
             onPress={() => setSelected(item.index)}
             style={{
               flexDirection: "row",
-              width: "20% ",
+              width: "20%",
               alignContent: "center",
               justifyContent: "center",
             }}

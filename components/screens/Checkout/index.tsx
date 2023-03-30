@@ -191,7 +191,7 @@ const Checkout = () => {
             </Text>
           </View>
           <View>
-            <View style={styles.priceItem}>
+            <View style={[styles.totalprice, styles.priceItem]}>
               <Text style={{ fontWeight: "bold" }}>{"Total"}</Text>
               <Text style={{ marginLeft: "auto" }}>
                 {price.total}
@@ -243,6 +243,10 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   priceItem: { flexDirection: "row", padding: 10 },
+  totalprice: {
+    borderTopColor: "#e2e2e2",
+    borderTopWidth: 1,
+  },
 });
 
 export default Checkout;
