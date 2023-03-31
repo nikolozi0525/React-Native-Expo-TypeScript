@@ -238,7 +238,7 @@ const Checkout = () => {
           <OrderButton
             title="Pay & Order"
             onClick={() => {
-              alert("Pay & order");
+              navigator.push("login");
             }}
             count={2}
           />
