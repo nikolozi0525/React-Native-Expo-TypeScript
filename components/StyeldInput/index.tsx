@@ -35,10 +35,18 @@ type Props = {
     | "newPassword"
     | "oneTimeCode";
   editable?: boolean;
+  secureTextEntry?: boolean;
 };
 
 const StyledInput = (props: Props) => {
-  const { value, onChange, placeholder, textContentType, editable } = props;
+  const {
+    value,
+    onChange,
+    placeholder,
+    textContentType,
+    editable,
+    secureTextEntry,
+  } = props;
 
   return (
     <TextInput
@@ -47,6 +55,7 @@ const StyledInput = (props: Props) => {
       onChangeText={onChange}
       placeholder={placeholder}
       textContentType={textContentType}
+      secureTextEntry={secureTextEntry}
       editable={editable}
     />
   );
@@ -54,9 +63,10 @@ const StyledInput = (props: Props) => {
 
 const styles = StyleSheet.create({
   input: {
-    backgroundColor: "#f8f8dd",
+    backgroundColor: "#fafadd",
     padding: 10,
-    borderRadius: 10,
+    borderRadius: 5,
+    fonatSize: 20,
     flex: 1,
     marginHorizontal: 5,
   },

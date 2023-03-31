@@ -11,8 +11,10 @@ import Cart from "../components/screens/Cart";
 import Checkout from "../components/screens/Checkout";
 import DetailView from "../components/screens/DetailView";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import Login from "../components/screens/Login/index";
 import Navbar from "../components/Navbar";
 import Overview from "../components/screens/Overview";
+import Signup from "../components/screens/Signup";
 import { SplashScreen } from "expo-router";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useColorScheme } from "react-native";
@@ -91,6 +93,9 @@ function RootLayoutNav() {
               },
             }}
           />
+          <Stack.Screen name="login" component={Login} />
+          <Stack.Screen name="signup" component={Signup} />
+
           <Stack.Screen name="checkout" component={Checkout} />
         </Stack.Navigator>
       </NavigationContainer>
