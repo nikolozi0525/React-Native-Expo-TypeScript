@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-import { Favorites } from "../../types";
+import { Food } from "../../types";
 import FoodCard from "../FoodCard/index";
 import HeadTitle from "../HeadTitle";
 
 const Favorite = () => {
-  const data: Array<Favorites> = [
+  const data: Array<Food> = [
     {
       id: "1di43s09sl3",
       price: 9.0,
@@ -22,8 +22,10 @@ const Favorite = () => {
   ];
   const [foods, setFoods] = useState([...data]);
   const foodList = () => {
-    return foods.map((f: any) => {
-      return <FoodCard price={f.price} title={f.title} key={f.id} />;
+    return foods.map((f: Food) => {
+      return (
+        <FoodCard price={f.price} title={f.title} key={f.id} src={f.src} />
+      );
     });
   };
   return (

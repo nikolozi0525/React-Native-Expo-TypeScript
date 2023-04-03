@@ -4,29 +4,29 @@ const styles = StyleSheet.create({
   card: {
     width: "50%",
     // height: 250,
-    paddingRight: 10,
-    paddingLeft: 10,
+    paddingRight: 5,
+    paddingLeft: 5,
     marginBottom: 30,
   },
   thumbs: {
     width: "100%",
-    aspectRatio: 1,
+    aspectRatio: 1.5,
     borderRadius: 8,
     // resizeMode: "stretch",
   },
   description: {
-    height: 80,
-    padding: 10,
+    height: 60,
+    padding: 5,
     backgroundColor: "#fffff6",
     borderBottomLeftRadius: 5,
     borderBottomRightRadius: 5,
   },
   text_1: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: "bold",
   },
   text_2: {
-    fontSize: 20,
+    fontSize: 16,
   },
 });
 

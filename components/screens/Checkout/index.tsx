@@ -167,10 +167,10 @@ const Checkout = () => {
        * value
        * 1:0%   2:10%   3:15%  4:20%
        */}
-      <View style={{ marginTop: 10 }}>
+      <View style={{ marginTop: 10, width: "80%" }}>
         <Text style={styles.headtitle}>Tip</Text>
         <OneSelect value={tip} onSelect={setTip} options={tips} />
-        <Text style={{ fontSize: 10, marginLeft: "25%" }}>{"Default"}</Text>
+        <Text style={{ fontSize: 10, marginLeft: "31%" }}>{"Default"}</Text>
       </View>
 
       <View>
@@ -254,7 +254,7 @@ const styles = StyleSheet.create({
   },
   InputWithIcon: {
     flexDirection: "row",
-    marginTop: 5,
+    marginTop: 10,
   },
   radio: {
     marginTop: 10,

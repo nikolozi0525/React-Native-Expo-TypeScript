@@ -14,8 +14,9 @@ import styles from "./styles";
 import { useNavigation } from "@react-navigation/native";
 
 type Props = {
-  price: string;
+  price: number;
   title: string;
+  src: string;
 };
 
 interface Display {
@@ -23,7 +24,7 @@ interface Display {
 }
 
 const FoodCard: React.FC<Props> = (props) => {
-  const { price, title } = props;
+  const { price, title, src } = props;
   const navigation: any = useNavigation();
   const [count, setCount] = useState(0);
 
@@ -38,7 +39,7 @@ const FoodCard: React.FC<Props> = (props) => {
             styles.thumbs,
             { height: Dimensions.get("window").width / 2 - 20 },
           ]}
-          source={require("../../assets/images/image1.png")}
+          source={{ uri: src }}
         />
         <View style={{ position: "absolute", top: 12, left: 10 }}>
           <Badge>
@@ -48,7 +49,7 @@ const FoodCard: React.FC<Props> = (props) => {
         <View
           style={{
             position: "absolute",
-            bottom: 100,
+            bottom: 70,
             right: "5%",
             width: "90%",
           }}

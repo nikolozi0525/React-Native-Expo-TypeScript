@@ -29,12 +29,14 @@ const Overview = () => {
           <ListView />
         </View>
       </ScrollView>
-      <OrderButton
-        title={"VIEW ORDER"}
-        price={9.0}
-        count={1}
-        onClick={onClick}
-      />
+      <View style={{ position: "absolute", bottom: 10, width: "100%" }}>
+        <OrderButton
+          title={"VIEW ORDER"}
+          price={9.0}
+          count={1}
+          onClick={onClick}
+        />
+      </View>
     </>
   );
 };
