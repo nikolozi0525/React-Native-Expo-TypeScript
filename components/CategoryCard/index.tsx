@@ -8,6 +8,7 @@ import {
 } from "react-native";
 
 import React from "react";
+import { useNavigation } from "expo-router";
 
 type Props = {
   title: string;
@@ -16,8 +17,13 @@ type Props = {
 
 const CategoryCard: React.FC<Props> = (props) => {
   const { article_count, title } = props;
+  const navigator: any = useNavigation();
+
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => navigator.push("categorydetail")}
+    >
       <View style={styles.card}>
         <View style={styles.description}>
           <Text style={styles.text_1}>{title}</Text>
@@ -55,12 +61,12 @@ const styles = StyleSheet.create({
   },
   text_1: {
     marginLeft: 5,
-    fontSize: 26,
+    fontSize: 22,
     fontWeight: "bold",
   },
   text_2: {
     position: "absolute",
-    bottom: 10,
+    bottom: 5,
     marginLeft: 5,
     fontSize: 18,
   },

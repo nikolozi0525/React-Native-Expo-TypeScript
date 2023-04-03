@@ -30,7 +30,7 @@ const OneSelect = (props: Props) => {
             onPress={() => setSelected(item.index)}
             style={{
               flexDirection: "row",
-              width: "20%",
+              flex: 1,
               alignContent: "center",
               justifyContent: "center",
             }}
@@ -62,16 +62,16 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   btn: {
-    width: "80%",
-    borderRadius: 10,
+    width: "90%",
+    borderRadius: 5,
     height: 40,
     backgroundColor: "#fff8cd",
     alignSelf: "center",
     justifyContent: "center",
   },
   clicked: {
-    width: "80%",
-    borderRadius: 10,
+    width: "90%",
+    borderRadius: 5,
     height: 40,
     backgroundColor: "#ebeddc",
     alignSelf: "center",

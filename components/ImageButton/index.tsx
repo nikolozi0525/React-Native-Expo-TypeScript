@@ -13,8 +13,9 @@ const ImageButton = () => {
         <Image
           style={{
             width: "100%",
-            borderRadius: 10,
+            borderRadius: 5,
             height: Dimensions.get("window").width / 2 - 10,
+            resizeMode: "stretch",
           }}
           source={require("../../assets/images/image4.png")}
         />

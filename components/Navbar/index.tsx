@@ -19,19 +19,18 @@ const Navbar = (props: Props) => {
               justifyContent: "center",
             }}
           >
-            <Text>
-              <Text style={styles.bolded}>
-                38 min
-                <FontAwesome
-                  name="circle"
-                  size={8}
-                  style={{ justifyContent: "center" }}
-                />{" "}
-                Home,{" "}
-              </Text>
+            <Text style={styles.bolded}>38 min </Text>
+            <FontAwesome
+              name="circle"
+              size={6}
+              style={{
+                justifyContent: "center",
+                alignSelf: "center",
+              }}
+            />
+            <Text style={styles.bolded}> Home, </Text>
 
-              <Text style={styles.myfont}>{address}</Text>
-            </Text>
+            <Text style={styles.myfont}>{address}</Text>
           </View>
           <View
             style={{

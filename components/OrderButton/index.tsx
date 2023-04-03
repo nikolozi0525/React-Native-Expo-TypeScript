@@ -38,12 +38,10 @@ const OrderButton = (props: Props) => {
 const styles = StyleSheet.create({
   container: {
     borderRadius: 5,
-    backgroundColor: "black",
+    backgroundColor: "#444444",
     paddingVertical: 15,
     flexDirection: "row",
-    // position: "absolute",
-    // bottom: 30,
-    width: "90%",
+    width: "95%",
     zIndex: 1,
     alignSelf: "center",
     marginBottom: 10,

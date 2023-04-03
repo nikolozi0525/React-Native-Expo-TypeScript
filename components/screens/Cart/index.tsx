@@ -15,14 +15,16 @@ const Cart = () => {
       >
         <CartList />
       </ScrollView>
-      <OrderButton
-        count={2}
-        price={18.0}
-        title="PREORDER"
-        onClick={() => {
-          navigation.push("checkout");
-        }}
-      />
+      <View style={{ position: "absolute", bottom: 20, width: "100%" }}>
+        <OrderButton
+          count={2}
+          price={18.0}
+          title="PREORDER"
+          onClick={() => {
+            navigation.push("checkout");
+          }}
+        />
+      </View>
     </>
   );
 };
