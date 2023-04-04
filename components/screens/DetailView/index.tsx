@@ -20,7 +20,7 @@ const DetailView = () => {
         <BackButton />
       </View>
       <ScrollView
-        style={[styles.container]}
+        style={styles.container}
         onScroll={(event) => {
           const scrolling = event.nativeEvent.contentOffset.y;
           setOffset(scrolling);
@@ -64,10 +64,10 @@ const DetailView = () => {
               </Text>
               ), Hummus (<Text style={styles.bolded}>Sesame seeds</Text>),
               Tomatoes, Cucumber, Beetroot falafel, Shepherd's cheese (
-              <Text style={styles.bolded}>Milk, Lactose</Text>),Lime,Olive Oil,
-              Parsley
+              <Text style={styles.bolded}>Milk, Lactose</Text>), Lime, Olive
+              Oil, Parsley
               <View>
-                <Text style={{ fontSize: 24 }}>
+                <Text style={{ fontSize: 20 }}>
                   My contain traces:Rye, barley, eggs, celery,soybeans, oats,
                   mustard
                 </Text>
@@ -84,7 +84,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignSelf: "baseline",
-    flexShrink: 1,
   },
   title: {
     fontSize: 20,
