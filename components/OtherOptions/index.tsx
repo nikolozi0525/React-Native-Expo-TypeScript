@@ -10,27 +10,33 @@ const OtherOptions = () => {
       id: "1di43s09sl3",
       price: 6,
       title: "Pasta",
+      src: "../../assets/images/image1.png",
     },
     {
       id: "dfs83a92sdfe",
       price: 15,
       title: "Pasta",
+      src: "../../assets/images/image3.png",
     },
     {
       id: "sfe320s3js5",
       price: 14,
       title: "Pasta",
+      src: "../../assets/images/image2.png",
     },
     {
       id: "y0gr57dlugs",
       price: 9,
       title: "Pasta",
+      src: "../../assets/images/image1.png",
     },
   ];
   const [foods, setFoods] = useState([...data]);
   const foodList = () => {
     return foods.map((f: any) => {
-      return <FoodCard price={f.price} title={f.title} key={f.id} />;
+      return (
+        <FoodCard price={f.price} title={f.title} key={f.id} src={f.src} />
+      );
     });
   };
   return (

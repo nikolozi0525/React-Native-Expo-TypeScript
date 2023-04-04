@@ -9,17 +9,17 @@ const Description = (props: Props) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{"Description"}</Text>
-      <Text style={{ fontSize: 24 }}>{children}</Text>
+      <Text style={{ fontSize: 20 }}>{children}</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    margin: 10,
+    padding: 10,
   },
   title: {
-    fontSize: 30,
+    fontSize: 22,
     fontWeight: "bold",
   },
 });

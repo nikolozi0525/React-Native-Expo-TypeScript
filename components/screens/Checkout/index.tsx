@@ -105,18 +105,22 @@ const Checkout = () => {
         <Text style={styles.headtitle}>{"Personal Info"}</Text>
       </View>
       <View style={styles.nameContainer}>
-        <StyledInput
-          placeholder="First name"
-          value={text}
-          onChange={changeText}
-        />
-        <StyledInput
-          placeholder="Last name"
-          value={lname}
-          onChange={changeLname}
-        />
+        <View style={{ paddingRight: 5, width: "50%" }}>
+          <StyledInput
+            placeholder="First name"
+            value={text}
+            onChange={changeText}
+          />
+        </View>
+        <View style={{ paddingLeft: 5, width: "50%" }}>
+          <StyledInput
+            placeholder="Last name"
+            value={lname}
+            onChange={changeLname}
+          />
+        </View>
       </View>
-      <View style={styles.InputWithIcon}>
+      <View style={[styles.InputWithIcon, { marginTop: 10 }]}>
         <StyledInput
           placeholder="Email Address"
           value={email}
@@ -145,14 +149,21 @@ const Checkout = () => {
         </View>
       </View>
 
-      {/* Deliver Time */}
+      {/* Deliver Time
+
+      param= deliverTime
+      1: 9:30 ~ 5: 11:30
+      
+      */}
       <View style={{ marginTop: 10 }}>
         <Text style={styles.headtitle}>Delivered when?</Text>
-        <OneSelect
-          value={deliverTime}
-          onSelect={setDeliverTime}
-          options={timeOptions}
-        />
+        <View style={{ paddingHorizontal: 5 }}>
+          <OneSelect
+            value={deliverTime}
+            onSelect={setDeliverTime}
+            options={timeOptions}
+          />
+        </View>
       </View>
       {/* <Button title="click me" onPress={() => alert(selected)}></Button> */}
       <View style={{ marginTop: 30, paddingHorizontal: 10 }}>
@@ -169,7 +180,9 @@ const Checkout = () => {
        */}
       <View style={{ marginTop: 10, width: "80%" }}>
         <Text style={styles.headtitle}>Tip</Text>
-        <OneSelect value={tip} onSelect={setTip} options={tips} />
+        <View style={{ paddingHorizontal: 5 }}>
+          <OneSelect value={tip} onSelect={setTip} options={tips} />
+        </View>
         <Text style={{ fontSize: 10, marginLeft: "31%" }}>{"Default"}</Text>
       </View>
 
@@ -177,30 +190,30 @@ const Checkout = () => {
         <Text style={styles.headtitle}>Order Summary</Text>
         <View style={styles.pricebox}>
           <View style={styles.priceItem}>
-            <Text>{"Items"}</Text>
-            <Text style={{ marginLeft: "auto" }}>
+            <Text style={{ fontSize: 16 }}>{"Items"}</Text>
+            <Text style={{ marginLeft: "auto", fontSize: 16 }}>
               {price.items}
               {"\u20AC"}
             </Text>
           </View>
           <View style={styles.priceItem}>
-            <Text>{"Tip"}</Text>
-            <Text style={{ marginLeft: "auto" }}>
+            <Text style={{ fontSize: 16 }}>{"Tip"}</Text>
+            <Text style={{ marginLeft: "auto", fontSize: 16 }}>
               {tip == 1 ? 0 : (price.items * 5 * tip) / 100}
               {"\u20AC"}
             </Text>
           </View>
           <View style={styles.priceItem}>
-            <Text>{"Delivery Fee"}</Text>
-            <Text style={{ marginLeft: "auto" }}>
+            <Text style={{ fontSize: 16 }}>{"Delivery Fee"}</Text>
+            <Text style={{ marginLeft: "auto", fontSize: 16 }}>
               {price.fee}
               {"\u20AC"}
             </Text>
           </View>
 
           <View style={[styles.totalprice, styles.priceItem]}>
-            <Text style={{ fontWeight: "bold" }}>{"Total"}</Text>
-            <Text style={{ marginLeft: "auto" }}>
+            <Text style={{ fontWeight: "bold", fontSize: 16 }}>{"Total"}</Text>
+            <Text style={{ marginLeft: "auto", fontSize: 16 }}>
               {getTotalPrice()}
               {"\u20AC"}
             </Text>
@@ -217,7 +230,7 @@ const Checkout = () => {
         </View>
 
         <View style={{ paddingHorizontal: 5, marginVertical: 10 }}>
-          <Text style={{ textAlign: "center" }}>
+          <Text style={{ textAlign: "center", fontSize: 14 }}>
             {"By placing an order you agree to our "}
             <Text
               style={{ borderBottomColor: "black", borderBottomWidth: 1 }}
@@ -234,7 +247,7 @@ const Checkout = () => {
             </Text>
           </Text>
         </View>
-        <View style={{ position: "relative" }}>
+        <View style={{ position: "relative", marginTop: 10 }}>
           <OrderButton
             title="Pay & Order"
             onClick={() => {
@@ -251,10 +264,12 @@ const Checkout = () => {
 const styles = StyleSheet.create({
   nameContainer: {
     flexDirection: "row",
+    paddingHorizontal: 10,
+    flex: 1,
   },
   InputWithIcon: {
     flexDirection: "row",
-    marginTop: 10,
+    marginHorizontal: 10,
   },
   radio: {
     marginTop: 10,
@@ -270,11 +285,12 @@ const styles = StyleSheet.create({
   headtitle: {
     fontWeight: "bold",
     marginLeft: 10,
+    fontSize: 18,
     marginVertical: 10,
   },
   addVocher: {
-    backgroundColor: "#f8f8dc",
-    paddingVertical: 10,
+    backgroundColor: "#fffaf2",
+    paddingVertical: 15,
     justifyContent: "center",
     alignSelf: "center",
     width: "100%",
@@ -282,7 +298,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   pricebox: {
-    backgroundColor: "#ffffee",
+    backgroundColor: "#fffaf2",
     marginHorizontal: 5,
     borderRadius: 5,
   },

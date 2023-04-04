@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from "react-native";
 import CategoryCard from "../CategoryCard";
 import HeadTitle from "../HeadTitle";
 import { Highlight } from "../../types";
+import { useNavigation } from "expo-router";
 
 type Props = {
   title: string;
@@ -27,6 +28,12 @@ const Highlights = (props: Props) => {
     },
   ];
   const [highlights, setHighlights] = useState([...data]);
+
+  const navigator: any = useNavigation();
+  const onClick = () => {
+    navigator.push("highlightdetail");
+  };
+
   const HighlightsList = () => {
     return highlights.map((h: any) => {
       return (
@@ -34,6 +41,7 @@ const Highlights = (props: Props) => {
           article_count={h.article_count}
           title={h.title}
           key={h.id}
+          onClick={onClick}
         />
       );
     });

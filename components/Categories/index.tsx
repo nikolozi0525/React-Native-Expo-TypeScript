@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { Category } from "../../types";
 import CategoryCard from "../CategoryCard";
 import HeadTitle from "../HeadTitle";
+import { useNavigation } from "expo-router";
 
 type Props = {
   title: string;
@@ -40,12 +41,18 @@ const Categories = (props: Props) => {
   ];
   const [categories, setCategories] = useState([...data]);
   const CategoryList = () => {
+    const navigator: any = useNavigation();
+
+    const onClick = () => {
+      navigator.push("categorydetail");
+    };
     return categories.map((f: any) => {
       return (
         <CategoryCard
           article_count={f.article_count}
           title={f.title}
           key={f.id}
+          onClick={onClick}
         />
       );
     });

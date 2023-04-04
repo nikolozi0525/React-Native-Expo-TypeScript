@@ -8,7 +8,7 @@ const BackButton = () => {
   return (
     <TouchableOpacity onPress={() => navigation.goBack()}>
       <View style={styles.container}>
-        <FontAwesome name="arrow-left" size={25} />
+        <FontAwesome name="arrow-left" size={18} />
       </View>
     </TouchableOpacity>
   );
@@ -17,14 +17,14 @@ const styles = StyleSheet.create({
   container: {
     alignItems: "center",
     justifyContent: "center",
-    width: 60,
-    height: 60,
+    width: 40,
+    height: 40,
     borderRadius: 30,
     shadowColor: "black",
-    shadowOpacity: 0.5,
+    shadowOpacity: 0.3,
     shadowOffset: {
       width: -1,
-      height: 2,
+      height: 1,
     },
     alignSelf: "flex-end",
     backgroundColor: "white",

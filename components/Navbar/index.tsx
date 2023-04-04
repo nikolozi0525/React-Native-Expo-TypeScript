@@ -1,6 +1,7 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { useNavigation } from "expo-router";
 
 type Props = {
   address: string;
@@ -8,8 +9,11 @@ type Props = {
 
 const Navbar = (props: Props) => {
   const { address } = props;
+
+  const navigator: any = useNavigation();
+
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => navigator.push("setaddress")}>
       <View style={styles.container}>
         <View>
           <View

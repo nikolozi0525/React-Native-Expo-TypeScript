@@ -12,38 +12,44 @@ type Props = {
   value: number;
   options: Array<Option>;
   onSelect: Dispatch<number>;
+  width?: any;
 };
 
 const OneSelect = (props: Props) => {
-  const { value, options, onSelect } = props;
+  const { value, options, onSelect, width } = props;
 
   const [isSelected, setSelected] = useState(value);
 
   useEffect(() => {
     onSelect(isSelected);
   }, [isSelected]);
+  const itemstyle = width ? width : styles.item_w;
   return (
     <View style={styles.container}>
       {options.map((item) => {
         return (
           <TouchableOpacity
             onPress={() => setSelected(item.index)}
-            style={{
-              flexDirection: "row",
-              flex: 1,
-              alignContent: "center",
-              justifyContent: "center",
-            }}
+            style={itemstyle}
           >
             {isSelected == item.index ? (
               <View style={styles.clicked}>
-                <Text style={{ textAlign: "center" }}>{item.title}</Text>
+                <Text
+                  style={{
+                    textAlign: "center",
+                    fontWeight: "bold",
+                    fontSize: 16,
+                  }}
+                >
+                  {item.title}
+                </Text>
               </View>
             ) : (
               <View style={styles.btn}>
                 <Text
                   style={{
                     textAlign: "center",
+                    fontSize: 15,
                   }}
                 >
                   {item.title}
@@ -61,11 +67,17 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
   },
+  item_w: {
+    flexDirection: "row",
+    flex: 1,
+    alignContent: "center",
+    justifyContent: "center",
+  },
   btn: {
     width: "90%",
     borderRadius: 5,
     height: 40,
-    backgroundColor: "#fff8cd",
+    backgroundColor: "#fffaf2",
     alignSelf: "center",
     justifyContent: "center",
   },

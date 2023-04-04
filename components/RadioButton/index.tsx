@@ -28,7 +28,7 @@ const RadioButton = (props: Props) => {
         return (
           <TouchableOpacity
             onPress={() => setSelected(item.index)}
-            style={{ flexDirection: "row", marginHorizontal: 100 }}
+            style={{ flexDirection: "row", marginHorizontal: 50 }}
           >
             {isSelected == item.index ? (
               <FontAwesome name="check-circle" size={18} />

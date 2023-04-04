@@ -13,17 +13,15 @@ import { useNavigation } from "expo-router";
 type Props = {
   title: string;
   article_count?: number | 0;
+  onClick: () => void;
 };
 
 const CategoryCard: React.FC<Props> = (props) => {
-  const { article_count, title } = props;
+  const { article_count, title, onClick } = props;
   const navigator: any = useNavigation();
 
   return (
-    <TouchableOpacity
-      style={styles.container}
-      onPress={() => navigator.push("categorydetail")}
-    >
+    <TouchableOpacity style={styles.container} onPress={onClick}>
       <View style={styles.card}>
         <View style={styles.description}>
           <Text style={styles.text_1}>{title}</Text>

@@ -15,7 +15,7 @@ const PriceBox = (props: Props) => {
         {price}
         {"\u20AC"}
       </Text>
-      <View style={{ position: "absolute", top: 50, right: 20 }}>
+      <View style={{ position: "absolute", top: 50, right: 20, width: 200 }}>
         <AddButton title="Add to Cart" />
       </View>
     </View>
