@@ -33,7 +33,7 @@ const Overview = () => {
 
   const [listValue, setListValue] = useState(0);
   useEffect(() => {
-    alert("changed");
+    alert(listValue);
     switch (listValue) {
       case 1:
         break;
