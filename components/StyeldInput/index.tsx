@@ -63,12 +63,14 @@ const StyledInput = (props: Props) => {
 
 const styles = StyleSheet.create({
   input: {
-    backgroundColor: "#fafadd",
+    backgroundColor: "#fffaf2",
+    borderColor: "#f0f0f0",
+    borderWidth: 1,
     padding: 10,
     borderRadius: 5,
-    fonatSize: 20,
+    fontSize: 16,
     flex: 1,
-    marginHorizontal: 5,
+    // marginHorizontal: 5,
   },
 });
 
