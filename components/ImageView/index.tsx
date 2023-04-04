@@ -20,8 +20,8 @@ const ImageView = (props: Props) => {
       <Animated.Image
         style={{
           width: "100%",
-          height: undefined,
-          aspectRatio: 1,
+          // height: undefined,
+          // aspectRatio: 1,
           transform: [
             {
               scaleX: animatedValue.interpolate({
