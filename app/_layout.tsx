@@ -8,12 +8,18 @@ import {
 
 import BasketNavbar from "../components/BasketNavbar";
 import Cart from "../components/screens/Cart";
+import CategoryDetail from "../components/screens/CategoryDetail";
 import Checkout from "../components/screens/Checkout";
 import DetailView from "../components/screens/DetailView";
+import FirstPage from "../components/screens/FirstPage";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import HighlightDetail from "../components/screens/HighlightDetail";
 import Login from "../components/screens/Login/index";
 import Navbar from "../components/Navbar";
 import Overview from "../components/screens/Overview";
+import SearchAddress from "../components/screens/SearchAddress/index";
+import SearchBar from "../components/SearchBar";
+import SetAddress from "../components/screens/SetAddress";
 import Signup from "../components/screens/Signup";
 import { SplashScreen } from "expo-router";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -57,7 +63,7 @@ function RootLayoutNav() {
     <>
       <NavigationContainer independent={true}>
         <Stack.Navigator
-          initialRouteName="Home"
+          initialRouteName="first"
           screenOptions={{
             headerStyle: {
               borderBottomColor: "transparent",
@@ -69,6 +75,9 @@ function RootLayoutNav() {
             name="Home"
             component={Overview}
             options={{
+              headerLeft: () => {
+                return null;
+              },
               animation: "slide_from_right",
               animationDuration: 1000,
               headerTitle: (props) => <Navbar address="Basselweg 73" />,
@@ -93,10 +102,38 @@ function RootLayoutNav() {
               },
             }}
           />
+          <Stack.Screen
+            name="first"
+            component={FirstPage}
+            options={{
+              headerShown: false,
+            }}
+          />
           <Stack.Screen name="login" component={Login} />
           <Stack.Screen name="signup" component={Signup} />
-
+          <Stack.Screen name="setaddress" component={SetAddress} />
           <Stack.Screen name="checkout" component={Checkout} />
+          <Stack.Screen
+            name="searchAddress"
+            component={SearchAddress}
+            options={{
+              headerTitle: () => <SearchBar />,
+            }}
+          />
+          <Stack.Screen
+            name="categorydetail"
+            options={{
+              headerTitle: "category",
+            }}
+            component={CategoryDetail}
+          />
+          <Stack.Screen
+            name="highlightdetail"
+            options={{
+              headerTitle: "",
+            }}
+            component={HighlightDetail}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </>
