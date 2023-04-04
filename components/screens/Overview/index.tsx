@@ -31,12 +31,9 @@ const Overview = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [key, setKey] = useState("");
 
-  const doModal = () => {
-    setModalVisible(true);
-  };
-
   const [listValue, setListValue] = useState(0);
   useEffect(() => {
+    alert("changed");
     switch (listValue) {
       case 1:
         break;
