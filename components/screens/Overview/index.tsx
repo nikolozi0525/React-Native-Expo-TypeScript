@@ -33,13 +33,13 @@ const Overview = () => {
 
   const [listValue, setListValue] = useState(0);
   useEffect(() => {
-    alert(listValue);
     switch (listValue) {
       case 1:
         break;
       case 2:
         break;
       case 3:
+        alert(listValue);
         setModalVisible(true);
         break;
       case 4:
