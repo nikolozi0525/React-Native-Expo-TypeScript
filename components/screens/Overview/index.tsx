@@ -67,7 +67,7 @@ const Overview = () => {
           >
             <View
               style={{
-                width: "transparent",
+                width: "100%",
                 height: "100%",
                 backgroundColor: "#fffaf2",
                 marginTop: 20,
