@@ -14,8 +14,8 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import FoodCard from "../../FoodCard/index";
 import Highlights from "../../Highlights";
 import ImageButton from "../../ImageButton";
-import ImageView from "../../ImageView";
 import ListView from "../../Listview";
+import Navbar from "../../Navbar";
 import OrderButton from "../../OrderButton";
 import React from "react";
 import StyledInput from "../../StyeldInput";
@@ -54,6 +54,7 @@ const Overview = () => {
 
   return (
     <>
+      <Navbar address="Basselweg 73" />
       <ScrollView style={styles.container}>
         <View>
           <Modal

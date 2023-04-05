@@ -1,5 +1,6 @@
 import { Dimensions, SafeAreaView, ScrollView, Text, View } from "react-native";
 
+import BasketNavbar from "../../BasketNavbar";
 import CartList from "../../CartList/index";
 import OrderButton from "../../OrderButton/index";
 import { useNavigation } from "expo-router";
@@ -8,6 +9,7 @@ const Cart = () => {
   const navigation: any = useNavigation();
   return (
     <>
+      <BasketNavbar title="Basket" />
       <ScrollView
         style={{
           backgroundColor: "#fffffe",

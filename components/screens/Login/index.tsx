@@ -1,5 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
+import BackButton from "../../BackButton/index";
 import { FontAwesome } from "@expo/vector-icons";
 import HeadTitle from "../../HeadTitle";
 import StyledInput from "../../StyeldInput";
@@ -19,8 +20,13 @@ const Login = () => {
 
   return (
     <View style={{ backgroundColor: "#fffffe", height: "100%" }}>
-      <HeadTitle>Welcome back</HeadTitle>
-      <View>
+      <View style={{ position: "absolute", top: 20, left: 20 }}>
+        <BackButton />
+      </View>
+      <View style={{ marginTop: 100 }}>
+        <HeadTitle>Welcome back</HeadTitle>
+      </View>
+      <View style={{ paddingHorizontal: 5, marginTop: 20 }}>
         <StyledInput
           value={email}
           onChange={setEmail}
@@ -74,8 +80,9 @@ const Login = () => {
 
 const styles = StyleSheet.create({
   password: {
-    marginTop: 30,
+    marginTop: 20,
     flexDirection: "row",
+    paddingHorizontal: 5,
   },
   show: {
     position: "absolute",
@@ -85,6 +92,7 @@ const styles = StyleSheet.create({
   forgot: {
     textAlign: "center",
     marginTop: 20,
+    fontSize: 16,
   },
   reset: {
     borderBottomColor: "#666666",

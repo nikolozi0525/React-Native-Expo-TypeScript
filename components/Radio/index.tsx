@@ -19,7 +19,7 @@ const Radio = (props: Props) => {
   }, [select]);
 
   return (
-    <View style={styles.container}>
+    <View style={{ paddingRight: 30 }}>
       <TouchableOpacity
         onPress={() => setSelect(!select)}
         style={{ flexDirection: "row" }}
@@ -36,9 +36,6 @@ const Radio = (props: Props) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
-  },
   icon: {
     alignSelf: "center",
   },

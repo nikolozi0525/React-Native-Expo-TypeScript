@@ -58,7 +58,7 @@ const Navbar = (props: Props) => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: 5,
+    paddingVertical: 10,
     backgroundColor: "#fffffe",
     flexDirection: "row",
     width: "100%",

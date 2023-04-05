@@ -29,10 +29,10 @@ const CategoryCard: React.FC<Props> = (props) => {
         </View>
         <Image
           style={{
-            left: 0,
             width: "30%",
             height: Dimensions.get("window").width / 4 - 10,
             borderRadius: 5,
+            resizeMode: "cover",
           }}
           source={require("../../assets/images/image2.png")}
         />

@@ -1,27 +1,46 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const BasketNavbar = () => {
+import { FontAwesome } from "@expo/vector-icons";
+import { useNavigation } from "expo-router";
+
+type Prop = {
+  title: string;
+};
+
+const BasketNavbar = (props: Prop) => {
+  const { title } = props;
+  const navigator = useNavigation();
   return (
     <View style={styles.container}>
-      <View
-        style={{
-          alignItems: "center",
-          flexDirection: "row",
-          justifyContent: "center",
-        }}
-      >
-        <Text style={styles.title}>{"Basket"}</Text>
+      <View style={styles.back}>
+        <TouchableOpacity
+          onPress={() => navigator.goBack()}
+          style={{ padding: 10 }}
+        >
+          <FontAwesome name="arrow-left" size={20} />
+        </TouchableOpacity>
       </View>
-      <View
-        style={{
-          alignItems: "center",
-          flexDirection: "row",
-          justifyContent: "center",
-        }}
-      >
-        <Text style={styles.time}>
-          Kitchen's Open 09:00 - 12:30 and 15:00 - 19:00
-        </Text>
+      <View style={{ width: "80%" }}>
+        <View
+          style={{
+            alignItems: "center",
+            flexDirection: "row",
+            justifyContent: "center",
+          }}
+        >
+          <Text style={styles.title}>{title}</Text>
+        </View>
+        <View
+          style={{
+            alignItems: "center",
+            flexDirection: "row",
+            justifyContent: "center",
+          }}
+        >
+          <Text style={styles.time}>
+            Kitchen's Open 09:00 - 12:30 and 15:00 - 19:00
+          </Text>
+        </View>
       </View>
     </View>
   );
@@ -33,7 +52,8 @@ const styles = StyleSheet.create({
     width: "100%",
     alignItems: "center",
     justifyContent: "center",
-    position: "relative",
+    backgroundColor: "#fffffe",
+    flexDirection: "row",
   },
   title: {
     fontSize: 24,
@@ -43,12 +63,14 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   time: {
-    fontSize: 14,
+    fontSize: 16,
     color: "grey",
     textAlign: "center",
+    padding: 5,
   },
-  arrow: {
-    marginLeft: 10,
+  back: {
+    position: "absolute",
+    left: 10,
   },
 });
 

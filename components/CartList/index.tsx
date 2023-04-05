@@ -77,9 +77,8 @@ const Item = ({ title, price, count }: ItemProps) => {
 const CartList = () => {
   return (
     <SafeAreaView>
-      <FlatList
-        data={data}
-        renderItem={({ item }) =>
+      {data.map((item) => {
+        return (
           (item.count > 0 && (
             <TouchableOpacity>
               <Item
@@ -90,32 +89,32 @@ const CartList = () => {
             </TouchableOpacity>
           )) ||
           null
-        }
-      />
+        );
+      })}
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   image: {
-    height: 50,
-    width: 50,
+    height: 60,
+    width: 60,
     borderRadius: 5,
     // marginLeft: 20,
   },
   item: {
     flexDirection: "row",
-    padding: 10,
+    padding: 15,
     backgroundColor: "#fffffe",
   },
   content: { marginLeft: 30 },
   title: {
     color: "grey",
-    fontSize: 12,
+    fontSize: 15,
   },
   price: {
     fontWeight: "bold",
-    fontSize: 16,
+    fontSize: 19,
   },
   count: {
     fontWeight: "bold",
