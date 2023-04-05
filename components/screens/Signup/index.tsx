@@ -1,5 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
+import BackButton from "../../BackButton/index";
 import { FontAwesome } from "@expo/vector-icons";
 import HeadTitle from "../../HeadTitle";
 import Radio from "../../Radio";
@@ -22,21 +23,30 @@ const Signup = () => {
 
   return (
     <View style={{ backgroundColor: "#fffffe", height: "100%" }}>
-      <HeadTitle>Create your account</HeadTitle>
+      <View style={{ position: "absolute", top: 20, left: 20 }}>
+        <BackButton />
+      </View>
+      <View style={{ marginTop: 100 }}>
+        <HeadTitle>Create your account</HeadTitle>
+      </View>
       <View style={{ flexDirection: "row", marginVertical: 20 }}>
-        <StyledInput
-          value={fname}
-          onChange={setFname}
-          placeholder="First Name"
-        />
-        <StyledInput
-          value={lname}
-          onChange={setLname}
-          placeholder="Last Name"
-        />
+        <View style={{ width: "50%", paddingHorizontal: 5 }}>
+          <StyledInput
+            value={fname}
+            onChange={setFname}
+            placeholder="First Name"
+          />
+        </View>
+        <View style={{ width: "50%", paddingHorizontal: 5 }}>
+          <StyledInput
+            value={lname}
+            onChange={setLname}
+            placeholder="Last Name"
+          />
+        </View>
       </View>
 
-      <View>
+      <View style={{ paddingHorizontal: 5 }}>
         <StyledInput
           value={email}
           onChange={setEmail}
@@ -63,12 +73,13 @@ const Signup = () => {
           )}
         </TouchableOpacity>
       </View>
-      <View style={{ padding: 20, width: 100 }}>
+      <View style={{ padding: 20 }}>
         <Radio selected={select} onChange={onSelect}>
           <Text
             style={{
               alignItems: "center",
-              width: 320,
+              // width: 320,
+              fontSize: 16,
             }}
           >
             {
@@ -95,6 +106,7 @@ const styles = StyleSheet.create({
   password: {
     marginTop: 20,
     flexDirection: "row",
+    paddingHorizontal: 5,
   },
   show: {
     position: "absolute",

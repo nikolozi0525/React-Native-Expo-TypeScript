@@ -38,7 +38,7 @@ const SetAddress = () => {
   return (
     <View style={styles.container}>
       <View style={styles.sorry}>
-        <Text>
+        <Text style={{ fontSize: 16 }}>
           {
             "We need your address to validate if we serve your area. Since we are just getting started, areas will be limited. Sorry!"
           }
@@ -46,7 +46,7 @@ const SetAddress = () => {
       </View>
       <View style={styles.type}>
         <Text style={styles.title}>{"Address type"}</Text>
-        <View style={{ width: "70%" }}>
+        <View style={{ width: "80%" }}>
           <OneSelect value={type} onSelect={setType} options={options} />
         </View>
       </View>

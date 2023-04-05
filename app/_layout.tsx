@@ -16,10 +16,14 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import HighlightDetail from "../components/screens/HighlightDetail";
 import Login from "../components/screens/Login/index";
 import Navbar from "../components/Navbar";
+import OrderDetail from "../components/screens/OrderDetail";
+import Orders from "../components/screens/Orders";
 import Overview from "../components/screens/Overview";
+import PrivacyPolicy from "../components/screens/PrivacyPolicy";
 import SearchAddress from "../components/screens/SearchAddress/index";
 import SearchBar from "../components/SearchBar";
 import SetAddress from "../components/screens/SetAddress";
+import SignIn from "../components/screens/SignIn";
 import Signup from "../components/screens/Signup";
 import { SplashScreen } from "expo-router";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -65,9 +69,6 @@ function RootLayoutNav() {
         <Stack.Navigator
           initialRouteName="first"
           screenOptions={{
-            headerStyle: {
-              borderBottomColor: "transparent",
-            },
             animation: "slide_from_right",
           }}
         >
@@ -75,12 +76,9 @@ function RootLayoutNav() {
             name="Home"
             component={Overview}
             options={{
-              headerLeft: () => {
-                return null;
-              },
+              headerShown: false,
               animation: "slide_from_right",
               animationDuration: 1000,
-              headerTitle: (props) => <Navbar address="Basselweg 73" />,
             }}
           />
           <Stack.Screen
@@ -96,10 +94,7 @@ function RootLayoutNav() {
             name="Basket"
             component={Cart}
             options={{
-              headerTitle: () => <BasketNavbar />,
-              headerStyle: {
-                borderBottomColor: "transparent",
-              },
+              headerShown: false,
             }}
           />
           <Stack.Screen
@@ -109,10 +104,28 @@ function RootLayoutNav() {
               headerShown: false,
             }}
           />
-          <Stack.Screen name="login" component={Login} />
-          <Stack.Screen name="signup" component={Signup} />
+          <Stack.Screen
+            name="login"
+            component={Login}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="signup"
+            component={Signup}
+            options={{
+              headerShown: false,
+            }}
+          />
           <Stack.Screen name="setaddress" component={SetAddress} />
-          <Stack.Screen name="checkout" component={Checkout} />
+          <Stack.Screen
+            name="checkout"
+            component={Checkout}
+            options={{
+              headerShown: false,
+            }}
+          />
           <Stack.Screen
             name="searchAddress"
             component={SearchAddress}
@@ -133,6 +146,16 @@ function RootLayoutNav() {
               headerTitle: "",
             }}
             component={HighlightDetail}
+          />
+          <Stack.Screen name="orders" component={Orders} />
+          <Stack.Screen name="privacy" component={PrivacyPolicy} />
+          <Stack.Screen name="OrderDetail" component={OrderDetail} />
+          <Stack.Screen
+            name="signin"
+            options={{
+              headerShown: false,
+            }}
+            component={SignIn}
           />
         </Stack.Navigator>
       </NavigationContainer>
