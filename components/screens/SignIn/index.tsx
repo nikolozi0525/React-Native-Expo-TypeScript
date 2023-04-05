@@ -4,8 +4,11 @@ import BackButton from "../../BackButton/index";
 import { FontAwesome } from "@expo/vector-icons";
 import HeadTitle from "../../HeadTitle";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { useNavigation } from "expo-router";
 
 const SignIn = () => {
+  const navigator: any = useNavigation();
+
   return (
     <View style={{ height: "100%", backgroundColor: "#fff9f1" }}>
       <View style={{ position: "absolute", left: 20, top: 20 }}>
@@ -39,7 +42,7 @@ const SignIn = () => {
           marginTop: 400,
         }}
       >
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigator.push("signup")}>
           <FontAwesome
             name="envelope-o"
             size={18}
@@ -112,6 +115,18 @@ const SignIn = () => {
             }}
           >
             SIGN UP WITH EMAIL
+          </Text>
+        </TouchableOpacity>
+      </View>
+      <View
+        style={{
+          alignItems: "center",
+          marginTop: 20,
+        }}
+      >
+        <TouchableOpacity onPress={() => navigator.push("login")}>
+          <Text style={{ fontSize: 16, fontWeight: "bold" }}>
+            ALREADY HAVE AN ACCOUNT?
           </Text>
         </TouchableOpacity>
       </View>

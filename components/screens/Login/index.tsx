@@ -16,7 +16,7 @@ const Login = () => {
   const navigator: any = useNavigation();
   const onSubmit = () => {
     //Validate & submit
-    navigator.push("signup");
+    navigator.push("Home");
   };
 
   return (

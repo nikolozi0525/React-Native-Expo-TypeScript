@@ -16,7 +16,7 @@ import { useNavigation } from "@react-navigation/native";
 type Props = {
   price: number;
   title: string;
-  src: string;
+  src: any;
 };
 
 interface Display {
@@ -39,7 +39,7 @@ const FoodCard: React.FC<Props> = (props) => {
             styles.thumbs,
             { height: Dimensions.get("window").width / 2 - 20 },
           ]}
-          source={{ uri: src }}
+          source={src}
         />
         <View style={{ position: "absolute", top: 12, left: 10 }}>
           <Badge>
