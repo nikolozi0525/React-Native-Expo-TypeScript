@@ -30,19 +30,19 @@ const Overview = () => {
   };
   const [modalVisible, setModalVisible] = useState(false);
   const [key, setKey] = useState("");
-
   const [listValue, setListValue] = useState(0);
-  useEffect(() => {
-    switch (listValue) {
+  const ctrlList = (key: number) => {
+    switch (key) {
       case 1:
+        navigation.push("orders");
         break;
       case 2:
         break;
       case 3:
-        alert(listValue);
         setModalVisible(true);
         break;
       case 4:
+        navigation.push("privacy");
         break;
       case 5:
         break;
@@ -50,7 +50,7 @@ const Overview = () => {
         break;
       default:
     }
-  }, [listValue]);
+  };
 
   return (
     <>
@@ -213,7 +213,7 @@ const Overview = () => {
                 </View>
                 <View>
                   <TouchableOpacity style={styles.flexrow}>
-                    <Text>About Circus</Text>
+                    <Text>About Ninja</Text>
                     <FontAwesome
                       name="chevron-right"
                       size={12}
@@ -248,7 +248,7 @@ const Overview = () => {
           <Highlights title="Highlights" />
           <Categories title="Categories" />
           <ImageButton />
-          <ListView value={listValue} onItemClick={setListValue} />
+          <ListView value={listValue} onItemClick={ctrlList} />
         </View>
       </ScrollView>
       <View style={{ position: "absolute", bottom: 10, width: "100%" }}>
