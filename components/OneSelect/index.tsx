@@ -31,6 +31,7 @@ const OneSelect = (props: Props) => {
           <TouchableOpacity
             onPress={() => setSelected(item.index)}
             style={itemstyle}
+            key={item.index}
           >
             {isSelected == item.index ? (
               <View style={styles.clicked}>

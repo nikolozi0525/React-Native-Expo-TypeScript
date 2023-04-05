@@ -1,4 +1,10 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 import { FontAwesome } from "@expo/vector-icons";
 import { useNavigation } from "expo-router";
@@ -11,7 +17,7 @@ const BasketNavbar = (props: Prop) => {
   const { title } = props;
   const navigator = useNavigation();
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.back}>
         <TouchableOpacity
           onPress={() => navigator.goBack()}
@@ -42,7 +48,7 @@ const BasketNavbar = (props: Prop) => {
           </Text>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

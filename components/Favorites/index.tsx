@@ -11,13 +11,13 @@ const Favorite = () => {
       id: "1di43s09sl3",
       price: 9.0,
       title: "Funky Falafel Bowl",
-      src: "../../assets/images/image1.png",
+      src: require("../../assets/images/image1.png"),
     },
     {
       id: "dfs83a92sdfe",
       price: 9.0,
       title: "Cheese Spatzie",
-      src: "../../assets/images/image2.png",
+      src: require("../../assets/images/image2.png"),
     },
   ];
   const [foods, setFoods] = useState([...data]);
