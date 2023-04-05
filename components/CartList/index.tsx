@@ -14,16 +14,19 @@ import { FontAwesome } from "@expo/vector-icons";
 
 const data = [
   {
+    id: "34ttet4",
     title: "Funky Falafel Bowl",
     price: 9.0,
     count: 2,
   },
   {
+    id: "4t0sg9",
     title: "Cheese Spatizie",
     price: 6.0,
     count: 0,
   },
   {
+    id: "gd90e4",
     title: "Klassiche Kasespatzle",
     price: 9.0,
     count: 2,
@@ -80,7 +83,7 @@ const CartList = () => {
       {data.map((item) => {
         return (
           (item.count > 0 && (
-            <TouchableOpacity>
+            <TouchableOpacity key={item.id}>
               <Item
                 title={item.title}
                 price={item.price}

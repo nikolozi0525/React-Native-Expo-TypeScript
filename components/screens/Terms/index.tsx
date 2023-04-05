@@ -40,16 +40,19 @@ const foods = [
 
 const answers = [
   {
+    id: "49lss0",
     question: "What is a ghost kitchen?",
     answer:
       "Wir haben alles unnötige gestrichen - keinen Gastraum, keine Stühle und Tische. Die Gerichte werden in den eigenen Küchen-Hubs gekocht. Dank modernster Gastro-Technologie können wir das, was vorher undenkbar gewesen ist: Gutes Essen preiswert liefern.",
   },
   {
+    id: "49dsl49",
     question: "When will the delivery area be expanded?",
     answer:
       "Wir haben alles unnötige gestrichen - keinen Gastraum, keine Stühle und Tische. Die Gerichte werden in den eigenen Küchen-Hubs gekocht. Dank modernster Gastro-Technologie können wir das, was vorher undenkbar gewesen ist: Gutes Essen preiswert liefern.",
   },
   {
+    id: "0sjeksl",
     question: "What is Vital",
     answer:
       "Vytal bietet ein Mehrwegsystem und unser Partner für eine nachhaltige Mehrweg-Lösung. Dafür benötigst du die Vytal App. Die Ausleihe ist bei Rückgabe innerhalb von 14 Tagen kostenlos. Die Behälter kannst du bei allen teilnehmenden Partnern zurückgeben.",
@@ -59,7 +62,7 @@ const answers = [
 const Terms = () => {
   const questionAnswer = () => {
     return answers.map((a) => {
-      return <Question question={a.question} answer={a.answer} />;
+      return <Question question={a.question} answer={a.answer} key={a.id} />;
     });
   };
 
@@ -67,6 +70,7 @@ const Terms = () => {
     return foods.map((f) => {
       return (
         <View
+          key={f.id}
           style={{
             backgroundColor: f.bgcolor,
             borderRadius: 10,

@@ -1,6 +1,7 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from "expo-router";
 
 type Props = {
@@ -13,46 +14,48 @@ const Navbar = (props: Props) => {
   const navigator: any = useNavigation();
 
   return (
-    <TouchableOpacity onPress={() => navigator.push("setaddress")}>
-      <View style={styles.container}>
-        <View>
-          <View
-            style={{
-              alignItems: "center",
-              flexDirection: "row",
-              justifyContent: "center",
-            }}
-          >
-            <Text style={styles.bolded}>38 min </Text>
-            <FontAwesome
-              name="circle"
-              size={6}
+    <SafeAreaView>
+      <TouchableOpacity onPress={() => navigator.push("setaddress")}>
+        <View style={styles.container}>
+          <View>
+            <View
               style={{
+                alignItems: "center",
+                flexDirection: "row",
                 justifyContent: "center",
-                alignSelf: "center",
               }}
-            />
-            <Text style={styles.bolded}> Home, </Text>
+            >
+              <Text style={styles.bolded}>38 min </Text>
+              <FontAwesome
+                name="circle"
+                size={6}
+                style={{
+                  justifyContent: "center",
+                  alignSelf: "center",
+                }}
+              />
+              <Text style={styles.bolded}> Home, </Text>
 
-            <Text style={styles.myfont}>{address}</Text>
+              <Text style={styles.myfont}>{address}</Text>
+            </View>
+            <View
+              style={{
+                alignItems: "center",
+                flexDirection: "row",
+                justifyContent: "center",
+              }}
+            >
+              <Text style={styles.time}>
+                Kitchen's Open 09:00 - 12:30 and 15:00 - 19:00
+              </Text>
+            </View>
           </View>
-          <View
-            style={{
-              alignItems: "center",
-              flexDirection: "row",
-              justifyContent: "center",
-            }}
-          >
-            <Text style={styles.time}>
-              Kitchen's Open 09:00 - 12:30 and 15:00 - 19:00
-            </Text>
+          <View style={styles.arrow}>
+            <FontAwesome name="chevron-right" />
           </View>
         </View>
-        <View style={styles.arrow}>
-          <FontAwesome name="chevron-right" />
-        </View>
-      </View>
-    </TouchableOpacity>
+      </TouchableOpacity>
+    </SafeAreaView>
   );
 };
 
