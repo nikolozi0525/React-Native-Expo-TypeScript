@@ -14,7 +14,7 @@ const Navbar = (props: Props) => {
   const navigator: any = useNavigation();
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ paddingBottom: 0 }}>
       <TouchableOpacity onPress={() => navigator.push("setaddress")}>
         <View style={styles.container}>
           <View>

@@ -77,6 +77,7 @@ const OrderDetail = () => {
               borderTopColor: "#dddddd",
               borderTopWidth: 1,
             }}
+            key={f.id}
           >
             <Image
               source={{ uri: f.src }}
@@ -174,7 +175,7 @@ const OrderDetail = () => {
                 justifyContent: "center",
                 padding: 15,
                 backgroundColor: "#333333",
-                borderRadius: 30,
+                borderRadius: 15,
               }}
             />
           </TouchableOpacity>
