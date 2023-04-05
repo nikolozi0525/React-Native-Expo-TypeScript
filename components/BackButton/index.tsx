@@ -1,16 +1,19 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 import { FontAwesome } from "@expo/vector-icons";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from "expo-router";
 
 const BackButton = () => {
   const navigation = useNavigation();
   return (
-    <TouchableOpacity onPress={() => navigation.goBack()}>
-      <View style={styles.container}>
-        <FontAwesome name="arrow-left" size={18} />
-      </View>
-    </TouchableOpacity>
+    <SafeAreaView>
+      <TouchableOpacity onPress={() => navigation.goBack()}>
+        <View style={styles.container}>
+          <FontAwesome name="arrow-left" size={18} />
+        </View>
+      </TouchableOpacity>
+    </SafeAreaView>
   );
 };
 const styles = StyleSheet.create({
