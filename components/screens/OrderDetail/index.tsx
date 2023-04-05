@@ -175,7 +175,7 @@ const OrderDetail = () => {
                 justifyContent: "center",
                 padding: 15,
                 backgroundColor: "#333333",
-                borderRadius: 15,
+                borderRadius: 50,
               }}
             />
           </TouchableOpacity>
