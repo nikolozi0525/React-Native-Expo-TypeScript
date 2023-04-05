@@ -4,6 +4,7 @@ import BackButton from "../../BackButton/index";
 import { FontAwesome } from "@expo/vector-icons";
 import HeadTitle from "../../HeadTitle";
 import Radio from "../../Radio";
+import { SafeAreaView } from "react-native-safe-area-context";
 import StyledInput from "../../StyeldInput";
 import { useNavigation } from "expo-router";
 import { useState } from "react";
@@ -22,7 +23,7 @@ const Signup = () => {
   };
 
   return (
-    <View style={{ backgroundColor: "#fffffe", height: "100%" }}>
+    <SafeAreaView style={{ backgroundColor: "#fffffe", height: "100%" }}>
       <View style={{ position: "absolute", top: 20, left: 20 }}>
         <BackButton />
       </View>
@@ -88,7 +89,6 @@ const Signup = () => {
           </Text>
         </Radio>
       </View>
-      <View style={styles.forgot}></View>
       <View style={styles.signup}>
         <TouchableOpacity onPress={onSubmit}>
           <Text
@@ -98,7 +98,7 @@ const Signup = () => {
           </Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -124,7 +124,8 @@ const styles = StyleSheet.create({
   },
   signup: {
     marginTop: "auto",
-    paddingVertical: 15,
+    marginBottom: 20,
+    paddingVertical: 20,
     backgroundColor: "#333333",
     marginHorizontal: 5,
     borderRadius: 5,
