@@ -6,7 +6,13 @@ import {
   View,
 } from "react-native";
 
-const ImageButton = () => {
+type Props = {
+  src?: any;
+};
+
+const ImageButton = (props: Props) => {
+  const { src } = props;
+  const img = src ? src : require("../../assets/images/image4.png");
   return (
     <View style={styles.card}>
       <TouchableOpacity>
@@ -17,7 +23,7 @@ const ImageButton = () => {
             height: Dimensions.get("window").width / 2 - 10,
             resizeMode: "stretch",
           }}
-          source={require("../../assets/images/image4.png")}
+          source={img}
         />
       </TouchableOpacity>
     </View>
