@@ -17,7 +17,7 @@ const Cart = () => {
       >
         <CartList />
       </ScrollView>
-      <View style={{ position: "absolute", bottom: 20, width: "100%" }}>
+      <View style={{ position: "absolute", bottom: 10, width: "100%" }}>
         <OrderButton
           count={2}
           price={18.0}
