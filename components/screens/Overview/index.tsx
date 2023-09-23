@@ -37,14 +37,16 @@ const Overview = () => {
         navigation.push("orders");
         break;
       case 2:
+        navigation.push("orders");
         break;
       case 3:
         setModalVisible(true);
         break;
       case 4:
-        navigation.push("privacy");
+        navigation.push("terms");
         break;
       case 5:
+        navigation.push("privacy");
         break;
       case 6:
         break;

@@ -1,6 +1,7 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { useNavigation } from "expo-router";
 
 type Props = {
   id: string;
@@ -19,6 +20,7 @@ const addresses: Array<Props> = [
 const Address = (props: Props) => {
   const { id, street, city } = props;
 
+  const navigator = useNavigation();
   return (
     <View
       style={{
@@ -29,7 +31,10 @@ const Address = (props: Props) => {
       }}
       key={id}
     >
-      <TouchableOpacity style={{ flexDirection: "row" }}>
+      <TouchableOpacity
+        style={{ flexDirection: "row" }}
+        onPress={() => navigator.goBack()}
+      >
         <FontAwesome name="map-marker" size={28} style={styles.icon} />
         <View style={{ marginLeft: 10 }}>
           <Text style={{ fontWeight: "bold", fontSize: 18 }}>{street}</Text>
@@ -76,7 +81,7 @@ const SearchAddress = () => {
         }}
       >
         <TouchableOpacity style={{ flexDirection: "row" }}>
-          <FontAwesome name="crosshairs" size={28} style={styles.icon} />
+          <FontAwesome name="times" size={28} style={styles.icon} />
           <View style={{ marginLeft: 10 }}>
             <Text style={{ fontWeight: "bold", fontSize: 18 }}>
               {"Can't find your Address?"}

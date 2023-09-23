@@ -20,19 +20,19 @@ const data: Array<CategoryData> = [
     title: "Fries",
     foods: [
       {
-        id: "1di43s09sl3",
+        id: "1di43ff9sl3",
         price: 9.0,
         title: "Funky Falafel Bowl",
         src: "../../assets/images/image1.png",
       },
       {
-        id: "dfs83a92sdfe",
+        id: "dfs83a9effe",
         price: 9.0,
         title: "Cheese Spatzie",
         src: "../../assets/images/image2.png",
       },
       {
-        id: "dfs83a92sdfe",
+        id: "dfs83a9esfe",
         price: 9.0,
         title: "Cheese Spatzie",
         src: "../../assets/images/image2.png",
@@ -44,7 +44,7 @@ const data: Array<CategoryData> = [
     title: "Pasta",
     foods: [
       {
-        id: "1di43s09sl3",
+        id: "1di43ssesl3",
         price: 9.0,
         title: "Funky Falafel Bowl",
         src: "../../assets/images/image1.png",
@@ -54,6 +54,12 @@ const data: Array<CategoryData> = [
         price: 9.0,
         title: "Cheese Spatzie",
         src: "../../assets/images/image2.png",
+      },
+      {
+        id: "dfs83a92sdfe",
+        price: 9.0,
+        title: "Cheese Spatzie",
+        src: "../../assets/images/image3.png",
       },
     ],
   },
@@ -68,7 +74,7 @@ const data: Array<CategoryData> = [
         src: "../../assets/images/image1.png",
       },
       {
-        id: "dfs83a92sdfe",
+        id: "dfs83a92sdde",
         price: 9.0,
         title: "Cheese Spatzie",
         src: "../../assets/images/image2.png",
@@ -146,7 +152,7 @@ const HighlightDetail = () => {
         showsVerticalScrollIndicator={false}
       >
         <View>{dataView()}</View>
-        <ImageButton />
+        <ImageButton src={require("../../../assets/images/image6.png")} />
         <View style={{ alignContent: "center", alignSelf: "center" }}>
           <Text
             style={{

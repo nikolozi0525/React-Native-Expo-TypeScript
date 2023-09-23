@@ -52,7 +52,7 @@ const Signup = () => {
           value={email}
           onChange={setEmail}
           placeholder="Email address"
-          textContentType="emailAddress"
+          // textContentType="emailAddress"
         />
       </View>
       <View style={styles.password}>
@@ -60,7 +60,7 @@ const Signup = () => {
           value={password}
           onChange={setPassword}
           placeholder="Password"
-          textContentType="password"
+          // textContentType="password"
           secureTextEntry={secure}
         />
         <TouchableOpacity

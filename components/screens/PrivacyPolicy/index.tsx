@@ -1,6 +1,8 @@
 import {
   Dimensions,
   Image,
+  Modal,
+  Pressable,
   ScrollView,
   StyleSheet,
   Text,
@@ -9,8 +11,10 @@ import {
 
 import { FontAwesome } from "@expo/vector-icons";
 import Question from "../../Quetion";
+import StyledInput from "../../StyeldInput";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "expo-router";
+import { useState } from "react";
 
 const foods = [
   {
@@ -41,16 +45,19 @@ const foods = [
 
 const answers = [
   {
+    id: "dsfa23",
     question: "What is a ghost kitchen?",
     answer:
       "Wir haben alles unnötige gestrichen - keinen Gastraum, keine Stühle und Tische. Die Gerichte werden in den eigenen Küchen-Hubs gekocht. Dank modernster Gastro-Technologie können wir das, was vorher undenkbar gewesen ist: Gutes Essen preiswert liefern.",
   },
   {
+    id: "98sgn4",
     question: "When will the delivery area be expanded?",
     answer:
       "Wir haben alles unnötige gestrichen - keinen Gastraum, keine Stühle und Tische. Die Gerichte werden in den eigenen Küchen-Hubs gekocht. Dank modernster Gastro-Technologie können wir das, was vorher undenkbar gewesen ist: Gutes Essen preiswert liefern.",
   },
   {
+    id: "90xrtvw4",
     question: "What is Vital",
     answer:
       "Vytal bietet ein Mehrwegsystem und unser Partner für eine nachhaltige Mehrweg-Lösung. Dafür benötigst du die Vytal App. Die Ausleihe ist bei Rückgabe innerhalb von 14 Tagen kostenlos. Die Behälter kannst du bei allen teilnehmenden Partnern zurückgeben.",
@@ -61,14 +68,17 @@ const PrivacyPolicy = () => {
   const navigator: any = useNavigation();
   const questionAnswer = () => {
     return answers.map((a) => {
-      return <Question question={a.question} answer={a.answer} />;
+      return <Question question={a.question} answer={a.answer} key={a.id} />;
     });
   };
+  const [modalVisible, setModalVisible] = useState(true);
+  const [key, setKey] = useState("");
 
   const viewCards = () => {
     return foods.map((f) => {
       return (
         <View
+          key={f.id}
           style={{
             backgroundColor: f.bgcolor,
             borderRadius: 10,
@@ -107,6 +117,68 @@ const PrivacyPolicy = () => {
 
   return (
     <>
+      <Modal
+        animationType="slide"
+        transparent={false}
+        visible={modalVisible}
+        onRequestClose={() => setModalVisible(false)}
+      >
+        <View
+          style={{
+            width: "100%",
+            height: "100%",
+            backgroundColor: "#fffaf2",
+            marginTop: 20,
+            borderTopEndRadius: 10,
+            padding: 15,
+          }}
+        >
+          <Pressable
+            onPress={() => {
+              setModalVisible(false);
+            }}
+          >
+            <FontAwesome
+              name="times"
+              size={20}
+              style={{
+                marginTop: 20,
+                marginLeft: "auto",
+                marginRight: 20,
+              }}
+            />
+          </Pressable>
+          <View style={{ marginTop: 10 }}>
+            <Text style={{ fontSize: 26, fontWeight: "bold", marginTop: 40 }}>
+              Data protection{" "}
+            </Text>
+            <Text style={{ fontSize: 24, fontWeight: "bold", marginTop: 30 }}>
+              1 Introduction
+            </Text>
+            <Text style={styles.textfont}>
+              In the following we inform you about the processing of personal
+              data during use
+            </Text>
+            <Text style={styles.textfont}>our website sushininja.de </Text>
+            <Text style={styles.textfont}>our social media</Text>
+            <Text style={styles.textfont}>
+              profiles. Personal data is all data that can be related to a
+              specific natural person, e.g. their name or IP address.
+            </Text>
+            <Text style={{ fontSize: 18, marginTop: 20 }}>
+              1.1 Contact Information
+            </Text>
+            <Text style={styles.textfont}>
+              Responsible according to art. 4 Para. 7 EU General Data Protection
+              Regulation (GDPR) is Circus Kitchens GmbH, Hongkongstrabe 6,
+              29=0457 Hamburg, Germany, E-Mail: datenschutz@circuskithchen.com.
+              We are legally represented by Nikolas Bullwinkel. Our data
+              protection officer is via heyData GmbH, Schutzenstrabe 5, 10117
+              Berlin
+            </Text>
+          </View>
+        </View>
+      </Modal>
       <View>
         <View style={styles.topBar}>
           <Text style={{ fontSize: 16, color: "white", marginRight: 5 }}>
@@ -205,7 +277,7 @@ const PrivacyPolicy = () => {
           </View>
         </View>
         <Image
-          source={require("../../../assets/images/image4.png")}
+          source={require("../../../assets/images/brand.png")}
           style={{
             width: "90%",
             height: Dimensions.get("window").width / 1.5,
@@ -485,6 +557,13 @@ const styles = StyleSheet.create({
     fontSize: 30,
     alignSelf: "center",
     textAlign: "center",
+  },
+  flexrow: {
+    flexDirection: "row",
+    padding: 10,
+  },
+  textfont: {
+    fontSize: 16,
   },
 });
 

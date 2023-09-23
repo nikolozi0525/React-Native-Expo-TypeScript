@@ -114,7 +114,7 @@ const SignIn = () => {
               color: "white",
             }}
           >
-            SIGN UP WITH EMAIL
+            CONTINUE WITH APPLE
           </Text>
         </TouchableOpacity>
       </View>

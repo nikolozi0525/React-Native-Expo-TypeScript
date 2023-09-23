@@ -32,7 +32,7 @@ const Login = () => {
           value={email}
           onChange={setEmail}
           placeholder="Email"
-          textContentType="emailAddress"
+          // textContentType="emailAddress"
         />
       </View>
       <View style={styles.password}>
@@ -40,7 +40,7 @@ const Login = () => {
           value={password}
           onChange={setPassword}
           placeholder="Password"
-          textContentType="password"
+          // textContentType="password"
           secureTextEntry={secure}
         />
         <TouchableOpacity

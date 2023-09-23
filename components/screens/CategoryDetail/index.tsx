@@ -19,6 +19,30 @@ const CategoryDetail = () => {
       title: "Cheese Spatzie",
       src: "../../assets/images/image2.png",
     },
+    {
+      id: "eg543s09sl3",
+      price: 9.0,
+      title: "Funky Falafel Bowl",
+      src: "../../assets/images/image3.png",
+    },
+    {
+      id: "htd3a92sdfe",
+      price: 9.0,
+      title: "Cheese Spatzie",
+      src: "../../assets/images/image1.png",
+    },
+    {
+      id: "5y73s09sl3",
+      price: 9.0,
+      title: "Funky Falafel Bowl",
+      src: "../../assets/images/image2.png",
+    },
+    {
+      id: "io8ga92sdfe",
+      price: 9.0,
+      title: "Cheese Spatzie",
+      src: "../../assets/images/image3.png",
+    },
   ];
   const [foods, setFoods] = useState([...data]);
 
@@ -33,7 +57,7 @@ const CategoryDetail = () => {
     <SafeAreaView style={{ height: "100%", backgroundColor: "#fffffe" }}>
       <ScrollView>
         <View style={styles.container}>{setfoods()}</View>
-        <ImageButton />
+        <ImageButton src={require("../../../assets/images/image6.png")} />
         <View style={{ alignContent: "center", alignSelf: "center" }}>
           <Text
             style={{

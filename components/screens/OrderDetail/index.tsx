@@ -26,28 +26,28 @@ const order = {
       count: 2,
     },
     {
-      id: "1di43s09sl3",
+      id: "1di4drgdhl3",
       price: 9.0,
       title: "Funky Falafel Bowl",
       src: "../../assets/images/image1.png",
       count: 1,
     },
     {
-      id: "dfs83a92sdfe",
+      id: "dfs8rrhrtsdfe",
       price: 9.0,
       title: "Cheese Spatzie",
       src: "../../assets/images/image2.png",
       count: 2,
     },
     {
-      id: "1di43s09sl3",
+      id: "1di44rydsl3",
       price: 9.0,
       title: "Funky Falafel Bowl",
       src: "../../assets/images/image1.png",
-      count: 1,
+      count: 6,
     },
     {
-      id: "dfs83a92sdfe",
+      id: "4ds836thfdfe",
       price: 9.0,
       title: "Cheese Spatzie",
       src: "../../assets/images/image2.png",
@@ -72,7 +72,7 @@ const OrderDetail = () => {
         (count > 0 && (
           <View
             style={{
-              padding: 20,
+              padding: 15,
               flexDirection: "row",
               borderTopColor: "#dddddd",
               borderTopWidth: 1,

@@ -239,14 +239,14 @@ const Checkout = () => {
               {"By placing an order you agree to our "}
               <Text
                 style={{ borderBottomColor: "black", borderBottomWidth: 1 }}
-                onPress={() => navigator.push("Home")}
+                onPress={() => navigator.push("terms")}
               >
                 terms and conditions
               </Text>
               {" and confirm that you have read our "}
               <Text
                 style={{ borderBottomColor: "black", borderBottomWidth: 1 }}
-                onPress={() => navigator.push("Home")}
+                onPress={() => navigator.push("privacy")}
               >
                 privacy policy
               </Text>
