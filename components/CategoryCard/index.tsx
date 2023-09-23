@@ -34,7 +34,7 @@ const CategoryCard: React.FC<Props> = (props) => {
             borderRadius: 5,
             resizeMode: "cover",
           }}
-          source={require("../../assets/images/image2.png")}
+          source={require("../../assets/images/image5.png")}
         />
       </View>
     </TouchableOpacity>
